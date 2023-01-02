@@ -1,0 +1,249 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  background: #232530;
+  font-family: Calibri, Tahoma, sans-serif;
+  font-size: 18pt;
+}
+
+h1,
+h2,
+h3 {
+  color: #f8f8f2;
+  margin: 0;
+  padding: 0;
+}
+
+p,
+ol,
+ul {
+  color: #f8f8f2;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+p, li {
+  line-height: 150%;
+}
+
+ol,
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+
+::selection {
+  color: #282a36;
+  background-color: #bd93f9;
+}
+:focus:not(section.subpage h1 a) {
+  box-shadow: inset 0 0 0 3px #bd93f9;
+}
+
+.container {
+  /* Set width of container to
+      1200px and align center */
+  margin: 0px auto;
+  width: 1200px;
+}
+
+/* Two column stuff*/
+
+.row {
+  display: flex;
+  max-width: 1275px;
+  margin: 0 auto;
+  background-color: #1e2029;
+}
+.left {
+  flex: 30%;
+/*  padding-top: 10px;*/
+}
+
+.right {
+  flex: 70%;
+/*  padding-top: 10px;*/
+}
+
+/* makes the gap in the middle look good*/
+.left section {
+  margin-right: 5px;
+}
+.right section {
+  margin-left: 5px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Top Header Stuff */
+#top-header {
+
+  text-align: center;
+  height: auto;
+}
+
+#menu,
+#inner-menu {
+  width: 100%;
+  height: 100%;
+  margin: none;
+}
+#inner-menu li, #inner-menu a {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 3px;
+}
+#menu ul,
+#inner-menu ul {
+  text-align: center;
+  margin: none;
+  background: #282a36;
+}
+
+#menu li,
+#inner-menu li {
+  display: inline-block;
+}
+
+#menu li a,
+#menu li span,
+#inner-menu li a,
+#inner-menu li span {
+  display: inline-block;
+  margin: 3px 0;
+  padding: 0em 1.5em;
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: lowercase;
+  line-height: 60px;
+}
+
+#menu li a,
+#inner-menu li a {
+  color: #f8f8f2;
+}
+.active a {
+  background: #bd93f9;
+  box-shadow: inset 0 0 0 3px #bd93f9;
+}
+/* Hovering on the menu makes it highlight */
+#menu li:hover a,
+#menu li span,
+#inner-menu li:hover a,
+#inner-menu li span {
+  background: #6272a4;
+  color: #f8f8f2;
+  text-decoration: none;
+}
+
+/* When tabbing into the menu, show the same background as hover alongside the border all focussed elements get.*/
+#menu a:focus,
+#inner-menu a:focus{
+  background: #6272a4;
+  color: #f8f8f2;
+  text-decoration: none;
+}
+
+/* make each section of content distinct */
+section {
+  margin: 10px;
+  background: #282a36;
+}
+
+/* top bar highlight for headers */
+section h1,
+h2,
+h3 {
+  background: #44475a;
+  padding: 10px 20px;
+}
+section h1:focus-within {
+  background: #6272a4 !important;
+  box-shadow: inset 0 0 0 3px #bd93f9;
+}
+
+section.subpage h1 a {
+  color: #f8f8f2;
+}
+
+section p {
+  padding: 15px;
+}
+
+
+
+section li {
+  padding: 0 15px;
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+#about img {
+  width: 100%;
+  max-width: 300px;
+  vertical-align: middle;
+}
+.image {
+  text-align: center;
+  padding: 10px;
+}
+/* Makes the "skip to content" button only appear when focused (aka keeb only)
+   users.*/
+.skip-to-content-link:not(:focus-within) {
+  background: #bd93f9;
+  box-shadow: inset 0 0 0 3px #bd93f9;
+  height: 0 !important;
+  width: 0 !important;
+  font-size: 0;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+/* Mobile/narrow display stuff
+*/
+@media screen and (max-width: 925px) {
+  /* Makes the two columns become one, its pretty cool*/
+  .left, .right, .row {
+      width: 100%;
+      display: block;
+  }
+  /*makes the menu list have one thing on each line*/
+  #menu li {
+      display: block;
+  }
+  /*makes the buttons much wider*/
+  #menu li a {
+      width: 80%;
+      padding: none;
+      margin: none;
+  }
+
+  /* the middle gap doesn't exist any more, so we can make the margin the same on all sides agian*/
+  .left section {
+      margin: 10px;
+  }
+  .right section {
+      margin: 10px;
+  }
+  /* Without this, there's extra space between the last "left" column and the first "right" column in single column view*/
+  .left section:last-of-type {
+      margin-bottom: 0px;
+  }
+  /* as above. */
+  .left {
+      padding-bottom: 0;
+  }
+  .right {
+      padding-top: 0px;
+  }
