@@ -1,12 +1,15 @@
 html,
 body {
   height: 100%;
+  width: 100%;
+  background: #232530;
+  background-repeat: repeat;
+  overflow: scroll;
 }
 
 body {
   margin: 0px;
   padding: 0px;
-  background: #232530;
   font-family: Calibri, Tahoma, sans-serif;
   font-size: 18pt;
 }
@@ -29,6 +32,17 @@ ul {
 
 p, li {
   line-height: 150%;
+}
+a:link{
+  color: #8be9fd;
+}
+a:visited {
+  color:#bd93f9;
+}
+a:hover,
+a:active,
+a:focus  {
+  color: #ff79c6;
 }
 
 ol,
@@ -212,7 +226,7 @@ section li {
 }
 /* Mobile/narrow display stuff
 */
-@media screen and (max-width: 925px) {
+@media screen and (max-width: 1000px) {
   /* Makes the two columns become one, its pretty cool*/
   .left, .right, .row {
       width: 100%;
