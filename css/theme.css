@@ -60,6 +60,9 @@ ul {
   box-shadow: inset 0 0 0 3px #bd93f9;
 }
 
+.shouty {
+  text-transform: uppercase;
+}
 .container {
   /* Set width of container to
       1200px and align center */
