@@ -217,7 +217,8 @@ section li {
 }
 .stamp {
   width: 20%;
-  float:left;
+  min-width: 88px;
+  float: left;
   image-rendering: crisp-edges;
   outline: 1px solid black;
   outline-offset: -1px;
