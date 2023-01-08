@@ -215,6 +215,18 @@ section li {
   text-align: center;
   padding: 10px;
 }
+.stamp {
+  width: 20%;
+  float:left;
+  image-rendering: crisp-edges;
+  outline: 1px solid black;
+  outline-offset: -1px;
+}
+
+/*For reasons unknown to me the margin gets fucky? this helps*/
+.stamps {
+  padding-bottom: 62px;
+}
 /* Makes the "skip to content" button only appear when focused (aka keeb only)
    users.*/
 .skip-to-content-link:not(:focus-within) {
@@ -226,6 +238,14 @@ section li {
   padding: 0;
   margin: 0;
   display: none;
+}
+
+code {
+  width: 90%;
+  background: #232530;
+  display: inline-block;
+  margin: 2.5%;
+  padding: 2.5%;
 }
 /* Mobile/narrow display stuff
 */
