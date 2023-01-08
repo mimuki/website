@@ -226,7 +226,7 @@ section li {
 
 /*For reasons unknown to me the margin gets fucky? this helps*/
 .stamps {
-  padding-bottom: 62px;
+  padding-bottom: 7%;
 }
 /* Makes the "skip to content" button only appear when focused (aka keeb only)
    users.*/
@@ -294,4 +294,9 @@ code {
   image-rendering: crisp-edges;
   outline: 1px solid black;
   outline-offset: -1px;
+}
+
+/*For reasons unknown to me the margin gets fucky? this helps*/
+.stamps {
+  padding-bottom: 22.75%;
 }
