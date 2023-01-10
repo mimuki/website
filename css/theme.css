@@ -262,14 +262,24 @@ code {
 .english {
   background: #72a361;
 }
+.english:before {
+  content: "english";
+}
 
 .tokiPona {
   background: #a39261;
+}
+.tokiPona:before {
+  content: "toki pona";
 }
 
 .htmlLang {
   background: #a36161;
 }
+.htmlLang:before {
+  content: "html";
+}
+
 /* Mobile/narrow display stuff
 */
 @media screen and (max-width: 1000px) {
@@ -320,4 +330,20 @@ code {
 /*For reasons unknown to me the margin gets fucky? this helps*/
 .stamps {
   padding-bottom: 22.75%;
+}
+
+.language {
+  width: 10%;
+  min-width: 50px;
+}
+/* Setting these in CSS lets us use different labels based on available screen
+   size */
+.english:before {
+  content: "eng";
+}
+.tokiPona:before {
+  content: "tok";
+}
+.htmlLang:before {
+  content: "html";
 }
