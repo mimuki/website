@@ -249,6 +249,27 @@ code {
   margin: 2.5%;
   padding: 2.5%;
 }
+
+.language {
+  display: inline-block;
+  background: #6272a4;
+  font-family: monospace;
+  text-align: center;
+  width: 20%;
+  min-width: 200px;
+}
+
+.english {
+  background: #72a361;
+}
+
+.tokiPona {
+  background: #a39261;
+}
+
+.htmlLang {
+  background: #a36161;
+}
 /* Mobile/narrow display stuff
 */
 @media screen and (max-width: 1000px) {
