@@ -216,7 +216,7 @@ section li {
   padding: 10px;
 }
 .stamp {
-  width: 20%;
+  width: 16.6666666%;
   min-width: 88px;
   float: left;
   image-rendering: crisp-edges;
@@ -226,7 +226,7 @@ section li {
 
 /*For reasons unknown to me the margin gets fucky? this helps*/
 .stamps {
-  padding-bottom: 7%;
+  padding-bottom: 5.75%;
 }
 /* Makes the "skip to content" button only appear when focused (aka keeb only)
    users.*/
