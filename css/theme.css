@@ -279,7 +279,16 @@ code {
 .htmlLang:before {
   content: "html";
 }
+.webRing {
+  text-align: center;
+}
+.prev {
+  float: left;
+}
 
+.next {
+  float: right;
+}
 /* Mobile/narrow display stuff
 */
 @media screen and (max-width: 1000px) {
