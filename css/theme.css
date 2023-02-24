@@ -7,6 +7,11 @@ body {
   color-scheme: dark;
 }
 
+@font-face {
+  font-family: "Bad Comic";
+  src: url(fonts/BadComic-Regular.woff);
+}
+
 body {
   margin: 0px;
   padding: 0px;
