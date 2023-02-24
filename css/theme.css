@@ -2,7 +2,7 @@ html,
 body {
   height: 100%;
   width: 100%;
-  background: #232530;
+  background-color: #232530;
   background-repeat: repeat;
   color-scheme: dark;
 }
@@ -10,7 +10,7 @@ body {
 body {
   margin: 0px;
   padding: 0px;
-  font-family: Calibri, Tahoma, sans-serif;
+  font-family: "Bad Comic", Calibri, Tahoma, sans-serif;
   font-size: 18pt;
 }
 
