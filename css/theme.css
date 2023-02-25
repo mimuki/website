@@ -18,7 +18,9 @@ body {
   font-family: "Bad Comic", Calibri, Tahoma, sans-serif;
   font-size: 18pt;
 }
-
+h1 {
+  font-size: 22pt;
+}
 h1,
 h2,
 h3 {
@@ -143,12 +145,13 @@ ul {
 #inner-menu li a,
 #inner-menu li span {
   display: inline-block;
-  margin: 3px 0;
-  padding: 0em 1.5em;
+  padding: 0em 0.75em;
+  margin: 0;
   text-decoration: none;
   font-weight: 600;
   text-transform: lowercase;
-  line-height: 60px;
+  line-height: 50px;
+  font-size: 18pt;
 }
 
 #menu li a,
@@ -156,6 +159,7 @@ ul {
   color: #f8f8f2;
 }
 .active a {
+  color: #282a36 !important;
   background: #bd93f9;
   box-shadow: inset 0 0 0 3px #bd93f9;
 }
@@ -165,7 +169,7 @@ ul {
 #inner-menu li:hover a,
 #inner-menu li span {
   background: #6272a4;
-  color: #f8f8f2;
+  color: #f8f8f2 !important;
   text-decoration: none;
 }
 
@@ -173,7 +177,7 @@ ul {
 #menu a:focus,
 #inner-menu a:focus{
   background: #6272a4;
-  color: #f8f8f2;
+  color: #f8f8f2 !important;
   text-decoration: none;
 }
 
@@ -279,10 +283,17 @@ code {
   }
   /*makes the buttons much wider*/
   #menu li a {
-      width: 80%;
+      width: 100%;
       padding: none;
       margin: none;
   }
+#menu li a,
+#menu li span,
+#inner-menu li a,
+#inner-menu li span {
+  padding: 0;
+  margin: 0;
+}
 
   /* the middle gap doesn't exist any more, so we can make the margin the same on all sides agian*/
   .left section {
