@@ -272,8 +272,7 @@ section li {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 80%;
-  max-width: 300px;
+  max-width: 100%;
 }
 
 /* Stamps default to 88px wide */
