@@ -267,12 +267,24 @@ section li {
   font-size: 90px;
 }
 
+.pokemonSmall {
+  text-align: center;
+  padding: 10px;
+  image-rendering: pixelated;
+  font-size: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  max-width: 300px;
+}
+
 .stamp {
   width: 20%;
   min-width: 88px;
   float: left;
   image-rendering: pixelated;
-  outline: 1px solid black;
+/*  outline: 1px solid black;*/
   outline-offset: -1px;
 }
 
