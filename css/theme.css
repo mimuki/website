@@ -291,6 +291,7 @@ section li {
 .stamps {
   text-align: center;
   background: none;
+  line-height: 0;
 }
 
 code {
