@@ -353,4 +353,10 @@ code {
   .right {
       margin-bottom: 0px;
   }
+  /* scaling is hard and complicated, since the image isn't always the same
+     size. for now my solution is to Don't */
+  .pokemonSmall {
+    display: none;
+}
+
 }
