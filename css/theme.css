@@ -274,11 +274,12 @@ section li {
 .stamp {
   width: 88px;
   image-rendering: pixelated;
-}
+} 
+
 /* If the screen is big enough to display 3 of them on one line at double size 
   (+20px padding), do so */
 @media screen and (min-width: 548px) {
-  .stamp {
+  .stamp{
     width: 176px;
   }
 }
