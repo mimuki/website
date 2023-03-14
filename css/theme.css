@@ -260,6 +260,10 @@ section li {
 }
 
 .pokemonSmall {
+  image-rendering: pixelated;
+  padding: 2px;
+}
+.pokemonParty {
   text-align: center;
   padding: 10px;
   image-rendering: pixelated;
@@ -355,7 +359,7 @@ code {
   }
   /* scaling is hard and complicated, since the image isn't always the same
      size. for now my solution is to Don't */
-  .pokemonSmall {
+  .pokemonParty {
     display: none;
 }
 
