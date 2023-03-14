@@ -284,10 +284,14 @@ section li {
   }
 }
 
-.stamps {
+.stamps,
+.stampsPage {
   text-align: center;
   background: none;
   line-height: 0;
+}
+.stampsPage {
+  margin-bottom: -10px;
 }
 
 code {
