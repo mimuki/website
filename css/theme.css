@@ -42,7 +42,8 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-size: 22pt;
 }
 
@@ -217,6 +218,12 @@ section h2 {
   background: #44475a66;
   padding: 10px 20px;
 }
+
+section h3 {
+  background: #44475a55;
+  padding: 10px 20px;
+}
+
 
 section p {
   padding: 15px;
