@@ -92,8 +92,8 @@ ul {
 :focus {
   box-shadow: inset 0 0 0 3px #bd93f9;
 }
-/* TODO: find out if theres some sort of focus that will go on top of the stamp itself */
-.stamps a:focus {
+/* TODO: find out if theres some sort of focus that will go on top of the banner itself */
+.banners a:focus {
   box-shadow: none;
 }
 
@@ -259,7 +259,7 @@ section li {
   width: 50%;
 }
 
-/* TODO: maybe make this work like the stamps */
+/* TODO: maybe make this work like the banners */
 .pokemonBig {
   text-align: center;
   display: block;
@@ -286,8 +286,8 @@ section li {
   max-width: 100%;
 }
 
-/* Stamps default to 88px wide */
-.stamp {
+/* banners default to 88px wide */
+.banner {
   width: 88px;
   image-rendering: pixelated;
 } 
@@ -295,18 +295,18 @@ section li {
 /* If the screen is big enough to display 2 of them on one line at double size 
   (+20px padding), do so */
 @media screen and (min-width: 372px) {
-  .stamp{
+  .banner {
     width: 176px;
   }
 }
 
-.stamps,
-.stampsPage {
+.banners,
+.bannersPage {
   text-align: center;
   background: none;
   line-height: 0;
 }
-.stampsPage {
+.bannersPage {
   margin-bottom: -10px;
 }
 
