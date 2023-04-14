@@ -8,8 +8,8 @@ body {
 }
 
 @font-face {
-  font-family: "Bad Comic";
-  src: url(https://mimuki.net/fonts/bad_comic_regular.woff);
+  font-family: "Andika Rats";
+  src: url(https://mimuki.net/fonts/andika_rats_regular.ttf);
 }
 @font-face {
   font-family: "linja lipamanka";
@@ -19,7 +19,7 @@ body {
 body {
   margin: 0px;
   padding: 0px;
-  font-family: "Bad Comic", Calibri, Tahoma, sans-serif;
+  font-family: "Andika Rats", Calibri, Tahoma, sans-serif;
   font-size: 18pt;
 }
 
