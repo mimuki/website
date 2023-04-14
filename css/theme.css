@@ -45,6 +45,7 @@ h1,
 h2,
 h3 {
   font-size: 22pt;
+  line-height: 100%;
 }
 
 h1,
@@ -64,7 +65,7 @@ ul {
 }
 
 p, li {
-  line-height: 150%;
+  line-height: 140%;
 }
 a:link{
   color: #8be9fd;
@@ -92,7 +93,7 @@ ul {
 :focus {
   box-shadow: inset 0 0 0 3px #bd93f9;
 }
-/* TODO: find out if theres some sort of focus that will go on top of the banner itself */
+
 .banners a:focus {
   box-shadow: none;
 }
@@ -136,6 +137,7 @@ ul {
 header {
   text-align: center;
   height: auto;
+  margin-top: -1px;
 }
 
 #menu,
@@ -156,6 +158,10 @@ header {
   background: #282a36;
 }
 
+#menu li:nth-of-type(odd) {
+  background: #44475a;
+}
+
 #menu li,
 #inner-menu li {
   display: inline-block;
@@ -169,15 +175,15 @@ header {
   padding: 0em 0.75em;
   margin: 0;
   text-decoration: none;
-  font-weight: 600;
   text-transform: lowercase;
-  line-height: 50px;
+  line-height: 36px;
   font-size: 18pt;
 }
 
 #menu li a,
 #inner-menu li a {
   color: #f8f8f2;
+  padding-bottom: 4px;
 }
 .active a {
   color: #282a36 !important;
@@ -412,6 +418,8 @@ code {
       width: 100%;
       padding: none;
       margin: none;
+      line-height: 60px;
+
   }
   #menu li a,
   #menu li span,
