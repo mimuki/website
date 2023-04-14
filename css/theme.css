@@ -139,7 +139,24 @@ header {
   height: auto;
   margin-top: -1px;
 }
+.headerLeft {
+  background: #ff79c6;
+  color: #282a36 !important;
+}
+.headerRight {
+  display: inline-block;
+  text-decoration: none;
+  text-transform: lowercase;
+  float: right;
+  background: #ffb86c;
+  color: #282a36;
+  padding: 0em 0.4em;
+  margin: 0;
+  line-height: 36px;
+  font-size: 18pt;
+  padding-bottom: 4px;
 
+}
 #menu,
 #inner-menu {
   width: 100%;
@@ -153,12 +170,12 @@ header {
 }
 #menu ul,
 #inner-menu ul {
-  text-align: center;
+  text-align: left;
   margin: none;
   background: #282a36;
 }
 
-#menu li:nth-of-type(odd) {
+#menu li:nth-of-type(odd):not(.headerRight) {
   background: #44475a;
 }
 
@@ -172,7 +189,7 @@ header {
 #inner-menu li a,
 #inner-menu li span {
   display: inline-block;
-  padding: 0em 0.75em;
+  padding: 0em 0.4em;
   margin: 0;
   text-decoration: none;
   text-transform: lowercase;
@@ -413,6 +430,11 @@ code {
   #menu li {
       display: block;
   }
+  #menu ul,
+  #inner-menu ul {
+    text-align: center;
+  }
+
   /* makes the buttons much wider */
   #menu li a {
       width: 100%;
@@ -447,12 +469,8 @@ code {
   .pokemonParty {
     display: none;
 }
-.websiteLink {
-  margin: 5px;
-  background: #282a36;
-  display: inline-block;
-  width: 30%;
-  max-width: 30%;
-}
+  .headerRight {
+    display: none !important;
+  }
 
 }
