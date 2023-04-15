@@ -168,13 +168,18 @@ header {
   box-sizing: border-box;
   padding: 3px;
 }
-#menu ul,
-#inner-menu ul {
+
+#menu ul {
   text-align: left;
   margin: none;
   background: #282a36;
 }
 
+#inner-menu ul {
+  text-align: center;
+  margin: none;
+  background: #282a36;
+}
 #menu li:nth-of-type(odd):not(.headerRight) {
   background: #44475a;
 }
