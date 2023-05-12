@@ -35,6 +35,7 @@ a,
 li {
   color: #29283b;
 }
+/* links*/
 a {
   padding-left: 0.4em;
   padding-right: 0.4em;
@@ -55,8 +56,12 @@ h2,
 h3 {
   font-size: 20pt;
 }
-
+/* lists! */
 ol, 
 ul {
   padding-left: 0;
   list-style: none;
+}
+main ol, main ul {
+  list-style: "·  "
+}
