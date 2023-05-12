@@ -1,0 +1,62 @@
+/*                                                                            */
+/* General design stuff */
+html,
+body {
+  height: 100%;
+  width:  100%;
+  background-color:  #bfb8c8;
+  background-repeat: repeat;
+  color-scheme: light;
+
+}
+main {
+  padding-bottom: 6%;
+}
+/* Fonts and text */
+@font-face {
+  font-family: "Andika Rats";
+  src: url(https://mimuki.net/fonts/andika_rats_regular.ttf);
+}
+
+body {
+  display: block;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 1.5% 0;
+  font-family: "Andika Rats", Calibri, Tahoma, sans-serif;
+  font-size: 18pt;
+}
+
+h1,
+h2,
+h3,
+p,
+a,
+li {
+  color: #29283b;
+}
+a {
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  padding-bottom: 0.2em;
+  margin-left: -0.4em;
+}
+a:hover,
+a:active,
+a:focus {
+  background-color: #28283b;
+  color: #bfb8c8;
+}
+h1 {
+  font-size: 22pt;
+}
+
+h2,
+h3 {
+  font-size: 20pt;
+}
+
+ol, 
+ul {
+  padding-left: 0;
+  list-style: none;
