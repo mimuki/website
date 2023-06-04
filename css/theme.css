@@ -1,9 +1,30 @@
-/* Fundamental website bits */
+/* { Variables } ------------------------------------------------------------ */
+:root {
+  --black: #282a36;
+  --white: #f8f8f2;
+  --grey: #44475a;
+  --red: #ff5555;
+  --orange: #ffb86c;
+  --yellow: #f1fa8c;
+  --green: #50fa7b;
+  --cyan: #8be9fd;
+  --blue: #8be9fd;
+  --purple: #bd93f9;
+  --pink: #ff79c6;
+  --bg: #232530;
+  --fg: var(--white);
+  --primary: var(--cyan);
+  --secondary: var(--pink);
+  --tertiary: #6272a4;
+  --error: var(--red);
+  --warn: var(--yellow);
+}
+/* { Website Fundamentals } ------------------------------------------------- */
 html,
 body {
   height: 100%;
   width: 100%;
-  background-color: #232530;
+  background-color: var(--bg);
   background-repeat: repeat;
   color-scheme: dark;
 }
@@ -11,10 +32,6 @@ body {
 @font-face {
   font-family: "Andika Rats";
   src: url(https://mimuki.net/fonts/andika_rats_regular.ttf);
-}
-@font-face {
-  font-family: "linja lipamanka";
-  src: url(https://mimuki.net/fonts/linja_lipamanka_regular.woff);
 }
 
 body {
@@ -24,36 +41,78 @@ body {
   font-size: 18pt;
 }
 
-h1,
-h2,
-h3 {
+/*--- { Headings } ---*/
+/* All headings */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--fg);
+  margin: 0;
+}
+/* Major headings */
+h1, h2, h3 {
   font-size: 22pt;
   line-height: 100%;
-  color: #f8f8f2;
-  margin: 0;
   padding: 0;
 }
 
-h4 {
-  font-size: 20pt;
-  margin: 0;
-  padding-left: 0.8em;
+section h1,
+section h2,
+section h3 {
+  padding: 10px 20px;
+  background: var(--grey);
 }
 
-h5 {
-  font-size: 18pt;
-  padding-left: 0.8em;
+/* Add extra space before a heading */
+p+h1, p+h2, p+h3,
+ul+h1, ul+h2, ul+h3 { margin-top: 7.5px }
 
+/* Minor headings */
+h4, h5, h6 {
+  padding-left: 0.6em;
 }
+
+h4 { font-size: 20pt; }
+h5 { font-size: 18pt; }
+h6 { font-size: 17pt; }
+
+/* Paragraphs */
 p {
-  color: #f8f8f2;
-  margin-top: 0;
-  margin-bottom: 0;
+  color: var(--fg);
+  padding: 7.5px 15px;
+  margin: 0;
+}
+
+/* Add extra padding for the top/bottoms */
+p:first-child,     /* If there's no heading */
+h1+p, h2+p, h3+p { /* If there is */ 
+  padding-top: 15px 
+}
+
+p:last-child { 
+  padding-bottom: 15px 
 }
 
 p, li {
   line-height: 140%;
 }
+
+/* Lists */
+/* */
+section ul {
+  padding: 7.5px 15px;
+}
+/* Make lists at the start/end of a section have more padding */
+section ul:first-child, /* If there's no heading */
+section h1+ul,          /* If there is */
+section h2+ul,
+section h3+ul { 
+  padding-top: 15px 
+}
+
+section ul:last-child { padding-bottom: 15px; }
+
+/* Inner menu has its own Vibe */
+#inner-menu ul { padding: 0px }
+/* made it this far engoodening */
 
 ol,
 ul {
@@ -229,31 +288,12 @@ section {
   background: #282a36;
 }
 
-/* top bar highlight for headers */
-section h1 {
-  background: #44475a;
-  padding: 10px 20px;
-}
 
-section h2 {
-  background: #44475a66;
-  padding: 10px 20px;
-}
-
-section h3 {
-  background: #44475a55;
-  padding: 10px 20px;
-}
-
-
-section p {
-  padding: 15px;
-}
 
 
 
 section li {
-  padding: 0 15px;
+  padding: 0;
   list-style-type: '·  ';
   list-style-position: inside;
 }
