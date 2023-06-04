@@ -1,3 +1,4 @@
+/* Fundamental website bits */
 html,
 body {
   height: 100%;
@@ -6,7 +7,7 @@ body {
   background-repeat: repeat;
   color-scheme: dark;
 }
-
+/* Fonts */
 @font-face {
   font-family: "Andika Rats";
   src: url(https://mimuki.net/fonts/andika_rats_regular.ttf);
@@ -23,42 +24,28 @@ body {
   font-size: 18pt;
 }
 
-.tok {
-  font-family: "linja lipamanka", "Bad Comic", Calibri, Tahoma, sans-serif;
-  font-size: 18pt;
-}
-
-.tok a {
-  text-underline-offset: 8px;
-}
-
-.tok aside {
-  display: inline-block;
-  text-align: center;
-  background: #6272a4;
-  padding: 20px;
-  margin: 1% 20%;
-  width: 60%;
-}
-
 h1,
 h2,
 h3 {
   font-size: 22pt;
   line-height: 100%;
-}
-
-h1,
-h2,
-h3 {
   color: #f8f8f2;
   margin: 0;
   padding: 0;
 }
 
-p,
-ol,
-ul {
+h4 {
+  font-size: 20pt;
+  margin: 0;
+  padding-left: 0.8em;
+}
+
+h5 {
+  font-size: 18pt;
+  padding-left: 0.8em;
+
+}
+p {
   color: #f8f8f2;
   margin-top: 0;
   margin-bottom: 0;
@@ -67,6 +54,16 @@ ul {
 p, li {
   line-height: 140%;
 }
+
+ol,
+ul {
+  color: #f8f8f2;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
 a:link{
   color: #8be9fd;
 }
@@ -79,19 +76,12 @@ a:focus  {
   color: #ff79c6;
 }
 
-ol,
-ul {
-  padding-left: 0;
-  list-style: none;
-}
-
-
 ::selection {
   color: #282a36;
-  background-color: #bd93f9;
+  background-color: #ff79c6;
 }
 :focus {
-  box-shadow: inset 0 0 0 3px #bd93f9;
+  box-shadow: inset 0 0 0 3px #ff79c6;
 }
 
 .banners a:focus {
@@ -155,13 +145,18 @@ header {
   line-height: 36px;
   font-size: 18pt;
   padding-bottom: 4px;
-
 }
+
 #menu,
 #inner-menu {
   width: 100%;
   height: 100%;
   margin: none;
+}
+#inner-menu {
+  text-align: center;
+  margin: none;
+  background: #282a36;
 }
 #inner-menu li, #inner-menu a {
   width: 100%;
@@ -175,11 +170,6 @@ header {
   background: #282a36;
 }
 
-#inner-menu ul {
-  text-align: center;
-  margin: none;
-  background: #282a36;
-}
 #menu li:nth-of-type(odd):not(.headerRight) {
   background: #44475a;
 }
@@ -191,7 +181,7 @@ header {
 
 #menu li a,
 #menu li span,
-#inner-menu li a,
+#inner-menu a,
 #inner-menu li span {
   display: inline-block;
   padding: 0em 0.4em;
@@ -203,18 +193,21 @@ header {
 }
 
 #menu li a,
-#inner-menu li a {
+#inner-menu a {
   color: #f8f8f2;
   padding-bottom: 4px;
 }
+
 .active a {
   color: #282a36 !important;
-  background: #bd93f9;
-  box-shadow: inset 0 0 0 3px #bd93f9;
+  background: #8be9fd;
+  box-shadow: inset 0 0 0 3px #8be9fd;
 }
+
 /* Hovering on the menu makes it highlight */
 #menu li:hover a,
 #menu li span,
+#inner-menu a:hover,
 #inner-menu li:hover a,
 #inner-menu li span {
   background: #6272a4 !important;
@@ -388,8 +381,7 @@ code {
   background: #6272a4;
   color: #f8f8f2 !important;
   text-decoration: none;
-
-  box-shadow: inset 0 0 0 3px #bd93f9;
+  box-shadow: inset 0 0 0 3px #ff79c6;
 }
 
 .websiteButton p {
@@ -424,6 +416,27 @@ code {
   background-color: #1e2029;
   height: 100%;
 }
+
+
+/* toki pona support */
+.tok {
+  font-family: "linja lipamanka", "Andika Rats", Calibri, Tahoma, sans-serif;
+  font-size: 18pt;
+}
+
+.tok a {
+  text-underline-offset: 8px;
+}
+
+.tok aside {
+  display: inline-block;
+  text-align: center;
+  background: #6272a4;
+  padding: 20px;
+  margin: 1% 20%;
+  width: 60%;
+}
+
 /* -- [ Mobile Support ] ---------------------------------------------------- */
 @media screen and (max-width: 1000px) {
   /* Makes the two columns become one, its pretty cool */
