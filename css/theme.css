@@ -275,11 +275,23 @@ header {
 }
 
 /* When tabbing into the menu, show the same background as hover alongside the border all focussed elements get.*/
-#menu a:focus,
+#menu a:focus:not(.skip),
 #inner-menu a:focus{
   background: #6272a4;
   color: #f8f8f2 !important;
   text-decoration: none;
+}
+
+
+.skip { 
+  position: absolute;
+  left: -10000px;
+  overflow: hidden;
+  background: var(--pink);
+  color: var(--bg) !important;
+}
+.skip:focus {
+  position: static
 }
 
 /* make each section of content distinct */
