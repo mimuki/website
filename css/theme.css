@@ -1,5 +1,5 @@
 /* { Variables } ------------------------------------------------------------ */
-:root {
+/*:root {
   --black: #282a36;
   --white: #f8f8f2;
   --grey: #44475a;
@@ -18,13 +18,13 @@
   --tertiary: #6272a4;
   --error: var(--red);
   --warn: var(--yellow);
-}
+}*/
 /* { Website Fundamentals } ------------------------------------------------- */
 html,
 body {
   height: 100%;
   width: 100%;
-  background-color: var(--bg);
+  background-color: #282a36;
   background-repeat: repeat;
   color-scheme: dark;
 }
@@ -44,7 +44,7 @@ body {
 /*--- { Headings } ---*/
 /* All headings */
 h1, h2, h3, h4, h5, h6 {
-  color: var(--fg);
+  color: #f8f8f2;
   margin: 0;
 }
 /* Major headings */
@@ -58,7 +58,7 @@ section h1,
 section h2,
 section h3 {
   padding: 10px 20px;
-  background: var(--grey);
+  background: #44475a;
 }
 
 /* Add extra space before a heading */
@@ -76,7 +76,7 @@ h6 { font-size: 17pt; }
 
 /* Paragraphs */
 p {
-  color: var(--fg);
+  color: #f8f8f2;
   padding: 7.5px 15px;
   margin: 0;
 }
@@ -288,8 +288,8 @@ header {
   position: absolute;
   left: -10000px;
   overflow: hidden;
-  background: var(--pink);
-  color: var(--bg) !important;
+  background: #ff79c6;
+  color: #282a36 !important;
 }
 .skip:focus-within {
   position: static;
