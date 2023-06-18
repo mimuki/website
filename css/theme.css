@@ -32,6 +32,7 @@ body {
 @font-face {
   font-family: "Andika Rats";
   src: url(https://mimuki.net/fonts/andika_rats_regular.ttf);
+  font-display: swap; /* Show any text at all while font loads */
 }
 
 body {
