@@ -7,6 +7,12 @@ html {
   font-size: 18pt;
 }
 body { margin: 0 } /* Defaults to 8?? */
+@font-face {
+  font-family: "Andika";
+  src: url(https://mimuki.net/fonts/andika/andika_regular.ttf);
+  font-display: swap; /* Show any text at all while it's loading */
+}
+
 /* Headings */
 h1, h2, h3, 
 h4, h5, h6 {
