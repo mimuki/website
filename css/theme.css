@@ -281,8 +281,8 @@ section ul:last-child { padding-bottom: 15px }
     width: 100%;
     display: block;
   }
-
-  #menu ul, #inner-menu ul { text-align: center }
+/* ! only needed for .skip maybe fix later */
+  #menu ul, #inner-menu ul, .skip { text-align: center !important } 
 
   /* one item per line */
   #menu li { display: block }
