@@ -168,6 +168,7 @@ section li {
   box-sizing: border-box; /* makes focus border behave */
   width: 88px; /* Default size, gets changed */
   image-rendering: pixelated; /* Look good pixel art */
+  margin: -6px; /* see [PS], this helps w focus */
   border: 6px solid transparent;  /* '' */
 }
 /* If two will fit side by side at double side (including 20px padding) */
