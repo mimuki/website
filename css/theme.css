@@ -163,10 +163,12 @@ section li {
   background: none;
   line-height: 0;
 }
-/* Default size: the actual size */
 .banner {
-  width: 88px;
-  image-rendering: pixelated;
+  position: relative; /* Makes the z-index stuff work, see [PS] */
+  width: 88px; /* Default size, gets changed */
+  image-rendering: pixelated; /* Look good pixel art */
+  margin: -6px; /* see [PS], this helps w focus */
+  border: 6px solid transparent;  /* '' */
 }
 /* If two will fit side by side at double side (including 20px padding) */
 @media screen and (min-width: 372px) {
@@ -203,9 +205,11 @@ section a:focus {
 .banners a { box-shadow: none !important }
 /* Show banner focus */
 .banners a:focus img {
+  position: relative; /* needed for z-index to work */
+  border: 6px solid #f8f8f2; /* Doesnt seem to work on qutebrowser? */
+  z-index: 10;
   outline: 3px solid #ff79c6;
   outline-offset: -3px;
-  
 }
 /* Special coloured header links*/
 /* Why?
