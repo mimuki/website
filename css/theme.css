@@ -206,7 +206,6 @@ section a:focus {
 .banners a { box-shadow: none !important }
 /* Show banner focus */
 .banners a:focus img {
-  position: relative; /* needed for z-index to work */
   border: 6px solid #f8f8f2;
   z-index: 10;/* display on top */
   outline: 3px solid #ff79c6;
