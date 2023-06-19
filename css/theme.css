@@ -165,9 +165,9 @@ section li {
 }
 .banner {
   position: relative; /* Makes the z-index stuff work, see [PS] */
+  box-sizing: border-box; /* makes focus border behave */
   width: 88px; /* Default size, gets changed */
   image-rendering: pixelated; /* Look good pixel art */
-  margin: -7px; /* see [PS], this helps w focus */
   border: 6px solid transparent;  /* '' */
 }
 /* If two will fit side by side at double side (including 20px padding) */
@@ -206,10 +206,10 @@ section a:focus {
 /* Show banner focus */
 .banners a:focus img {
   position: relative; /* needed for z-index to work */
-  border: 6px solid #f8f8f2; /* Doesnt seem to work on qutebrowser? */
-  z-index: 10;
+  border: 6px solid #f8f8f2;
+  z-index: 10;/* display on top */
   outline: 3px solid #ff79c6;
-  outline-offset: -3px;
+  outline-offset: -3px; /* make the outline be inset */
 }
 /* Special coloured header links*/
 /* Why?
