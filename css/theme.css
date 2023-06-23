@@ -51,7 +51,10 @@ a:link    { color: #8be9fd }
 a:visited { color: #bd93f9 }
 a:hover,
 a:active,
-a:focus   { color: #ff79c6 }
+a:focus   { 
+  color: #ff79c6;
+  outline: none !important; 
+}
 /* Highlighted text */
 ::selection {
   color: #282a36;
