@@ -48,7 +48,7 @@ li { padding: 0 }
 
 /* Link colours */
 a:link    { color: #8be9fd }
-a:visited { color: #bd93f9 }
+a:visited { color: #ffb86c }
 a:hover,
 a:active,
 a:focus   { 
@@ -188,15 +188,9 @@ section li {
 
 /* Focus indicator */
 /* Why?
- * * Certain special stuff gets a unique bg colour. 
- * * Carrying that over here is fun. 
  * * Certain stuff needs special handling, like banner images */
 .active a:focus {
   box-shadow: inset 0 0 0 3px #8be9fd !important;
-}
-
-.headerLeft:focus {
-  box-shadow: inset 0 0 0 3px #bd93f9 !important;
 }
 
 /* Makes text focus look nicer */
@@ -262,6 +256,17 @@ section a:focus {
   image-rendering: pixelated;
 
 }
+/* Section Focus */
+/* Why?
+ * * Just a tiny extra show of focus, and it's fun
+ * * It's especially precise because it looks bad on the banner section
+ *   but like, I could modify it later to be good
+ * 
+ *   If I do, I should move this to the regular section */
+
+section:not(.banners) { outline: 2px solid #282a36 }
+section:not(.banners):focus-within { outline: 2px solid #6272a4 }
+
 /* Special Section Aesthetic Nonsense */
 /* Why?
  * * Visually, we want it to look like sections have a heading "on top" of them
