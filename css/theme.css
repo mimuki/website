@@ -194,7 +194,8 @@ section li {
 }
 
 /* Makes text focus look nicer */
-section a:focus {
+/* Excluding .banners fixes that overflow focus issue */
+section:not(.banners) a:focus {
   padding: 0  10px  2px; /* add more space between border and text */
   margin:  0 -10px -2px; /* Don't shift around text when you do */
   text-decoration: none; /* The outline says it's a link */
@@ -208,6 +209,7 @@ section a:focus {
   outline: 3px solid #ff79c6;
   outline-offset: -3px; /* make the outline be inset */
 }
+
 /* Special coloured header links*/
 /* Why?
  * * .headerLeft makes the "home" button more obvious
