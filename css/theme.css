@@ -174,6 +174,7 @@ section li {
   margin: -6px; /* see [PS], this helps w focus */
   border: 6px solid transparent;  /* '' */
 }
+
 /* If two will fit side by side at double side (including 20px padding) */
 @media screen and (min-width: 372px) {
   .banner { width: 176px }
@@ -292,7 +293,6 @@ section h1+ul,
 section h2+ul,
 section h3+ul { padding-top: 15px }
 section ul:last-child { padding-bottom: 15px }
-
 
 /* [3] Mobile ----------------------------------------------------------- */
 @media screen and (max-width: 1000px) {
