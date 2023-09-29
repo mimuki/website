@@ -41,7 +41,6 @@ ol, ul {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
-  list-style: none;
 }
 
 li { padding: 0 }
@@ -87,7 +86,7 @@ code {
 /* [1] Header Specific ------------------------------------------------------ */
 
 /* Improve header margins */
-#menu ul { 
+#menu ul, #menu ol { 
   margin-top: 4px; /* Fixes being slightly offscreen  */
   margin-bottom: 4px; /* setting this to 3 or lower breaks things */
   padding-left: 0; /* defaults to 40?! */
@@ -149,10 +148,10 @@ section h3 {
   background: #44475a;
 }
 /* This gets changed in [PS] */
-section ul { padding: 7.5px 15px }
-section li {
-  list-style-type: '·  ';/* Characters of your choice */
-  list-style-position: inside;
+section ul, section ol { padding: 7.5px 15px }
+.right section li {
+  list-style-position: outside;
+  margin-left: 30px;
 }
 
 /* [3] Post-content --------------------------------------------------------- */
@@ -286,13 +285,19 @@ p:last-child {
 }
 /* Mid section headings need extra margin */
 p+h1,  p+h2,  p+h3,
-ul+h1, ul+h2, ul+h3 { margin-top: 7.5px }
+ul+h1, ul+h2, ul+h3,
+ol+h1, ol+h2, ol+h3 { margin-top: 7.5px }
 /* Make lists at the start/end of a section have more padding */
 section ul:first-child, /* If there's no heading */
 section h1+ul,
 section h2+ul,
-section h3+ul { padding-top: 15px }
-section ul:last-child { padding-bottom: 15px }
+section h3+ul,
+section ol:first-child,
+section h1+ol,
+section h2+ol,
+section h3+ol { padding-top: 15px }
+section ul:last-child,
+section ol:last-child { padding-bottom: 15px }
 
 /* [3] Mobile ----------------------------------------------------------- */
 @media screen and (max-width: 1000px) {
