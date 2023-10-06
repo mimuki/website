@@ -11,10 +11,18 @@
   <meta name="generator" content="Eleventy v2.0.1">
   <link rel="icon" type="image/x-icon" href= /images/favicon.png>
   <link rel="stylesheet" href="/css/theme.css">
-
+  <script src="/js/theme.js" defer></script>
 </head>
 <body>
   <header>
+  <script>
+      // Check if there's any override. If so, let the markup know by setting an attribute on the <html> element
+      const colorModeOverride = window.localStorage.getItem('color-mode');
+      const hasColorModeOverride = typeof colorModeOverride === 'string';
+      if (hasColorModeOverride) {
+        document.documentElement.setAttribute('data-force-color-mode', colorModeOverride);
+      }
+    </script>
   <nav id="menu">
     <ul>
       <li><a href="#main" class="skip">Skip navigation</a></li
@@ -34,7 +42,24 @@
       ><li
            >
         <a href="/contact/index.html">Contact</a></li
-      >
+      ><li>
+        <input type="checkbox" id="toggle-darkmode" /
+        ><label for="toggle-darkmode"><span>toggle light/dark mode</span></label>
+        <noscript>
+          <style>
+            #menu ul li label { display: none !important }
+          </style>
+        </noscript>
+        <script>
+          // Check the dark-mode checkbox if
+          // - The override is set to dark
+          // - No override is set but the system prefers dark mode
+          if ((colorModeOverride == 'dark') || (!hasColorModeOverride && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              document.querySelector('#toggle-darkmode').checked = true;
+          }
+        </script></li
+        ><li>
+        <a id="reset-darkmode" href="#" title="Reset theme to browser default">(reset)</a>
     </ul>
   </nav>
 </header>

@@ -1,7 +1,7 @@
 /* Sitewide {{{ */
 /* Colours {{{ */
-/* Defaults {{{ */
-:root {
+/* Dark mode (default & toggle) {{{ */
+:root, :root[data-force-color-mode="dark"] {
   --black:           #1e2029;
   --black-lighter:   #282a36;
   --white:           #f8f8f2;
@@ -30,19 +30,20 @@
   --accent: var(--blue);
   --accent-fg: var(--black);
   --accent-darker: var(--blue);
+  --accent-fg-darker: var(--black);
   --accent-contrast: var(--pink);
   --accent-contrast-darker: var(--pink);
 
   --header-bg: var(--bg);
   --header-bg-alt: --var(--bg-lighter);
-  --header-active-bg: #6272a4;
-  --header-active-fg: var(--fg);
   --header-fg: var(--fg);
   --header-fg-alt: var(--fg);
   --header-actived-fg: var(--fg);
   --header-actived-bg: #6272a4;
   --header-focused-fg: var(--header-actived-fg);
   --header-focused-bg: var(--header-actived-bg);
+  --header-hovered-fg: var(--header-actived-fg);
+  --header-hovered-bg: var(--header-actived-bg);
 
   --section-bg: var(--bg);
   --section-fg: var(--fg);
@@ -73,10 +74,10 @@
   --selection-bg: var(--pink);
   --focus-size: 3px;
   --focus: var(--accent-contrast);
-} /* }}} */
-/* Customs {{{ */
-@media (prefers-color-scheme: light) {
-:root {
+}
+/* }}} */
+/* Light mode (browser/OS setting) {{{ */
+@media (prefers-color-scheme: light) { :root {
   --black:           #1c1c1c;
   --black-lighter:   #585858;
   --white:           #d7afaf;
@@ -105,6 +106,7 @@
   --accent: var(--yellow-lighter);
   --accent-fg: var(--black);
   --accent-darker: var(--yellow);
+  --accent-fg-darker: var(--bg);
   --accent-contrast: var(--red-lighter);
   --accent-contrast-darker: var(--red);
 
@@ -116,6 +118,8 @@
   --header-actived-bg: var(--accent-darker);
   --header-focused-fg: var(--bg);
   --header-focused-bg: var(--accent-darker);
+  --header-hovered-fg: var(--bg);
+  --header-hovered-bg: var(--accent-darker);
 
   --section-bg: var(--bg-lighter);
   --section-fg: var(--fg);
@@ -146,10 +150,88 @@
   --selection-bg: var(--black);
   --focus-size: 1px;
   --focus: var(--accent-contrast-darker);
-}} /* }}} */
+}}
+/* }}} */
+/* Light mode (manual toggle) {{{ */
+:root[data-force-color-mode="light"] {
+  --black:           #1c1c1c;
+  --black-lighter:   #585858;
+  --white:           #d7afaf;
+  --white-lighter:   #f8f8f2;
+
+  --red:             #af0000;
+  --red-lighter:     #d70000;
+  --orange:          #000000;
+  --orange-lighter:  #000000;
+  --yellow:          #b67200;
+  --yellow-lighter:  #ffaf00;
+  --green:           #005f5f;
+  --green-lighter:   #00875f;
+  --blue:            #005f87;
+  --blue-lighter:    #0087d7;
+  --purple:          #5f005f;
+  --purple-lighter:  #875f87;
+  --pink:            #af005f;
+  --pink-lighter:    #d8005f;
+
+  --bg: #ffd477;
+  --bg-lighter: #ffe1b0;
+  --fg: #1a1b22;
+  --row-bg: transparent;
+
+  --accent: var(--yellow-lighter);
+  --accent-fg: var(--black);
+  --accent-darker: var(--yellow);
+  --accent-fg-darker: var(--bg);
+  --accent-contrast: var(--red-lighter);
+  --accent-contrast-darker: var(--red);
+
+  --header-bg: var(--yellow-lighter);
+  --header-bg-alt: #ffbc56;
+  --header-fg: var(--fg);
+  --header-fg-alt: var(--fg);
+  --header-actived-fg: var(--bg);
+  --header-actived-bg: var(--accent-darker);
+  --header-focused-fg: var(--bg);
+  --header-focused-bg: var(--accent-darker);
+  --header-hovered-fg: var(--bg);
+  --header-hovered-bg: var(--accent-darker);
+
+  --section-bg: var(--bg-lighter);
+  --section-fg: var(--fg);
+  --section-border: var(--accent-darker);
+  --section-border-focus: dashed var(--accent-contrast-darker);
+  --section-border-size: 2px;
+  --section-header-fg: var(--accent-contrast-darker);
+  --section-header-bg: var(--section-bg);
+  --section-header-padding: 10px 20px 0px;
+
+  --skip-bg: var(--black);
+  --skip-fg: #ffffff;
+  --code-bg: var(--accent);
+  --code-fg: var(--fg);
+
+  --link-regular-fg: var(--blue);
+  --link-regular-bg: transparent;
+  --link-visited-fg: var(--purple);
+  --link-visited-bg: var(--link-regular-bg);
+  --link-hovered-fg: var(--fg); 
+  --link-hovered-bg: var(--accent);
+  --link-focused-fg: var(--link-hovered-fg);
+  --link-focused-bg: var(--link-hovered-bg);
+  --link-actived-fg: var(--link-hovered-fg);
+  --link-actived-bg: var(--link-hovered-bg);
+  
+  --selection-fg: var(--bg);
+  --selection-bg: var(--black);
+  --focus-size: 1px;
+  --focus: var(--accent-contrast-darker);
+}
+/* }}} */
 /* }}} */
 /* Big Things {{{ */
 html { 
+  background-color: #282a36;
   background-color: var(--bg);
   font-family: Calibri, Tahoma, sans-serif;
   font-size: 18pt;
@@ -162,6 +244,7 @@ html {
 html:before, html:after {
     content: "";
     position: fixed;
+    background: #282a36;
     background: var(--bg);
     left: 0;
     right: 0;
@@ -176,6 +259,7 @@ body { margin: 0 } /* Defaults to 8?? */
 /* Body is split into two parts, both inside of a row. */
 /* It makes sure .left and .right take up a good amount of space */
 .row {
+  background: #1e2029;
   background: var(--row-bg);
   display: flex;
   max-width: 1279px;
@@ -187,6 +271,7 @@ body { margin: 0 } /* Defaults to 8?? */
 /* Headings {{{ */
 h1, h2, h3, 
 h4, h5, h6 {
+  color: #f8f8f2;
   color: var(--section-header-fg);
   margin: 0; /* defaults to 0.83em? */
   line-height: 100%; /* Defaults to... more than that */
@@ -201,6 +286,7 @@ h6 { font-size: 17pt }
 /* }}} */
 /* Regular text {{{ */
 p, ol, ul {
+  color: #f8f8f2;
   color: var(--fg);
   line-height: 140%; /* The default is slightly more than this */
 }
@@ -219,7 +305,9 @@ li { padding: 0 }
 
 code {
   width: 90%;
+  color: #f8f8f2;
   color: var(--code-fg);
+  background: #1e2029;
   background: var(--code-bg);
   display: inline-block;
   margin: 2.5%;
@@ -228,41 +316,59 @@ code {
 /* }}} */
 /* Links {{{ */
 a:link    { 
+  color: #8be9fd;
   color: var(--link-regular-fg);
+  background: transparent;
   background: var(--link-regular-bg);
 }
 a:visited { 
+  color: #ffb86c;
   color: var(--link-visited-fg);
+  background: transparent;
   background: var(--link-visited-bg);
 }
 a:hover {
+  color: #ff79c6;
   color: var(--link-hovered-fg);
+  background: transparent;
   background: var(--link-hovered-bg);
 }
 a:active {
+  color: #ff79c6;
   color: var(--link-actived-fg);
+  background: transparent;
   background: var(--link-actived-bg);
 }
 a:focus {
+  color: #ff79c6;
   color: var(--link-focused-fg);
+  background: transparent;
   background: var(--link-focused-bg);
 }
 /* }}} */
 /* Focus {{{ */
 /* Highlighted text */
 ::selection {
+  color: #f8f8f2;
   color: var(--selection-fg);
+  background-color: #ff79c6;
   background-color: var(--selection-bg);
 }
 /* Focus indicator */
 :focus {
+
+  box-shadow: inset 0 0 0 3px #ff79c6 !important;
   box-shadow: inset 0 0 0 var(--focus-size) var(--focus) !important;
   outline: none;
 }
 /* }}} */
 /* }}} */
 /* Header Specific {{{  */
-header { background: var(--header-bg) }
+header {
+  background: #282a36;
+  background: var(--header-bg);
+}
+
 /* Display top navbar's items all on the same line */
 #menu li, #inner-menu li { display: inline-block }
 /* jump tos etc are different */
@@ -272,7 +378,9 @@ header { background: var(--header-bg) }
 }
 /* General header link styling */
 #menu li a,     /* Top nav bar links */
+#menu li label, /* Theme toggle */
 #inner-menu a { /* Jump-tos and other in-page menus */
+  color: #f8f8f2;
   color: var(--header-fg);
   padding: 0.1em 0.6em; /* 2px to ensure it aligns with my browser UI */
   text-decoration: none; /* Don't underline */
@@ -280,9 +388,11 @@ header { background: var(--header-bg) }
   line-height: 100%; /* Helps with alignment */
 }
 /* Alternating colours for header and other menus */
-#menu li:nth-child(2n) a,
+#menu li:nth-child(2n):not(.active) a,
 #inner-menu li:nth-child(2n) a { 
+  background: #282a36;
   background: var(--header-bg-alt);
+  color: #f8f8f2;
   color: var(--header-fg-alt);
 } 
 /* Jump to menus etc */
@@ -293,27 +403,76 @@ header { background: var(--header-bg) }
 }
 /* Currently active page */
 .active a {
+  color: #f8f8f2 !important;
   color: var(--header-actived-fg) !important; 
+  background: #6272a4;
   background: var(--header-actived-bg);
 }
 /* Currently hovered/focused link */
 #menu a:focus:not(.skip), /* see [PS] */
-#inner-menu a:focus {
-  background: var(--header-focused-bg) !important;
+#inner-menu a:focus,
+#toggle-darkmode:focus + label {
+  color: #f8f8f2 !important;
   color: var(--header-focused-fg) !important;
+  background: #6272a4 !important;
+  background: var(--header-focused-bg) !important;
 }
 
 #menu li:hover a,
+#menu li label:hover,
 #inner-menu a:hover { 
-  background: var(--bg);
-  color: var(--fg);
+  color: #f8f8f2 !important;
+  color: var(--header-hovered-fg) !important;
+  background: #6272a4 !important;
+  background: var(--header-hovered-bg) !important;
 }
+/* Theme toggle */
+#menu > li:last-child { float: right }
+/* Only show reset button if override is set */
+#reset-darkmode {
+  display: none;
+  text-decoration: none;
+}
+[data-force-color-mode] #reset-darkmode {
+  display: initial;
+}
+/* Don't visually show the checkbox */
+/* setting display: none would make it inaccessible via tabbing */
+/* so we just make it look hidden */
+#toggle-darkmode { 
+  padding: 0;
+  margin: 0;
+  appearance: none;
+  width: 0;
+  height: 0;
+}
+
+#toggle-darkmode + label {
+  color: #f8f8f2;
+  color: var(--header-fg-alt);
+  background: #282a36;
+  background: var(--header-bg-alt);
+}
+#toggle-darkmode + label > span {
+  display: none
+}
+#toggle-darkmode + label:after {
+  content: "switch to dark mode";
+  cursor: pointer;
+}
+#toggle-darkmode:checked + label:after {
+  content: "switch to light mode";
+}
+
 /* }}} */
 /* Section Specific {{{ */
 section {
   margin: 10px;
+  background: #282a36;
   background: var(--section-bg);
+  color: #f8f8f2;
   color: var(--section-fg);
+  border: 2px solid transparent;
   border: var(--section-border-size) solid var(--section-border);
 }
 
@@ -323,7 +482,9 @@ section {
 section h1,
 section h2,
 section h3 {
+  padding: 10px 20px;
   padding: var(--section-header-padding);
+  background: #282a36;
   background: var(--section-header-bg);
 }
 /* This gets changed in [PS] */
@@ -371,8 +532,8 @@ section:not(.banners) a:focus {
 .banners a { box-shadow: none !important }
 /* Show banner focus */
 .banners a:focus img {
-  /* border: 12px solid var(--yellow-lighter); */
   z-index: 10;/* display on top */
+  outline: 12px solid #ff79c6;
   outline: 12px solid var(--focus);
   outline-offset: 0px; /* make the outline be inset */
 }
@@ -383,14 +544,18 @@ section:not(.banners) a:focus {
  * * .skip is important for keyboard only navigation- it's only visible sometimes, and needs to be distinct */
 
 .headerLeft { 
-  background: var(--accent) !important;
-  color: var(--accent-fg) !important;
+  background: #8be9fd;
+  background: var(--accent-darker) !important;
+  color: #1e2029;
+  color: var(--accent-fg-darker) !important;
 }
 /* By default, be offscren */
 .skip {
   position: absolute;
   left: -1000px;
+  color: #1e2029 !important;
   color: var(--skip-fg) !important;
+  background: #ff79c6 !important;
   background: var(--skip-bg) !important;
 }
 /* If focused (e.g. screenreader, pressing tab), make visible */
@@ -426,7 +591,10 @@ section:not(.banners) a:focus {
  * 
  *   If I do, I should move this to the regular section */
 
-section:not(.banners):focus-within { border: 2px var(--section-border-focus) }
+section:not(.banners):focus-within { 
+  border: 2px solid #6272a4;
+  border: 2px var(--section-border-focus);
+}
 
 /* Outlines on the banners look bad, so i don't */
 .banners {
@@ -477,7 +645,8 @@ section ol:last-child { padding-bottom: 15px }
   /* one item per line */
   #menu li { display: block }
   /* take up the whole line */
-  #menu li a { 
+  #menu li a,
+  #menu li label { 
     display: block;
     width: 100%;
     padding: unset; /* fixes a horzontal scrolling issue */
