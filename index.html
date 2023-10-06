@@ -10,14 +10,16 @@
   <meta name="robots" content="noindex">
   <meta name="generator" content="Eleventy v2.0.1">
   <link rel="icon" type="image/x-icon" href= /images/favicon.png>
-  <link rel="stylesheet" href="/css/theme.css">
+  <link rel="stylesheet" media="(prefers-color-scheme: light)" href="/css/theme-light.css">
+  <link rel="stylesheet" media="(prefers-color-scheme: dark)" href="/css/theme.css">
+
 </head>
 <body class = "en">
   <header>
   <nav id="menu">
     <ul>
       <li><a href="#main" class="skip">Skip navigation</a></li
-      ><li><a href="/index.html" class="headerLeft" aria-label="home">mimuki.net</a></li
+      ><li><a href="/index.html" class="headerLeft">Home</a></li
       ><li
            >
         <a href="/about/index.html">About</a></li
@@ -33,7 +35,7 @@
       ><li
            >
         <a href="/contact/index.html">Contact</a></li
-      ><li class="headerRight">powered by rats</li>
+      >
     </ul>
   </nav>
 </header>
@@ -65,6 +67,12 @@
     Cool updates will live here for a while, when I remember to.
     </p>
     <ul>
+      <li>
+        Added light mode! Please contact me if there's contrast issues with either theme, I haven't tested things super thoroughly yet. It'll detect your browser (maybe OS?) preference, and on old browsers <em>should</em> default to dark mode.
+      </li>
+      <li>
+        todo: override the browser default with a toggle, add fallback colours for old browers that don't understand CSS variables
+      </li>
       <li>
         Started a new project, <a href="/projects/beads">experimenting with making my own prayer beads.</a>
       </li>
@@ -101,9 +109,6 @@
       ></a><a href="https://beefox.xyz"><img class="banner"
            src="https://beefox.xyz/buttons/88x31-beefox.gif"
            alt="BeeFox.xyz"
-      ></a><a href="https://star.girlmeow.autos/"><img class="banner"
-           src="https://star.girlmeow.autos/banners/girlmeow.png"
-           alt="Star.GirlMeow.Autos"
       ></a><a href="https://devurandom.xyz/"><img class="banner"
            src="https://devurandom.xyz/banners/my_banner.gif"
            alt="rnd's corner"

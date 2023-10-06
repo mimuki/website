@@ -1,22 +1,193 @@
-/* [0] Core */
+/* Sitewide {{{ */
+/* Colours {{{ */
+/* Defaults {{{ */
+:root {
+  --black:           #1e2029;
+  --black-lighter:   #282a36;
+  --white:           #f8f8f2;
+  --white-lighter:   #ffffff;
+
+  --red:             #ff5555;
+  --red-lighter:     #ff5555;
+  --orange:          #ffb86c;
+  --orange-lighter:  #ffb86c;
+  --yellow:          #f1fa8c;
+  --yellow-lighter:  #f1fa8c;
+  --green:           #50fa7b;
+  --green-lighter:   #50fa7b;
+  --blue:            #8be9fd;
+  --blue-lighter:    #8be9fd;
+  --purple:          #bd93f9;
+  --purple-lighter:  #bd93f9;
+  --pink:            #ff79c6;
+  --pink-lighter:    #ff79c6;
+
+  --bg: var(--black-lighter);
+  --bg-lighter: #44475a;
+  --fg: var(--white);
+  --row-bg: var(--black);
+
+  --accent: var(--blue);
+  --accent-fg: var(--black);
+  --accent-darker: var(--blue);
+  --accent-contrast: var(--pink);
+  --accent-contrast-darker: var(--pink);
+
+  --header-bg: var(--bg);
+  --header-bg-alt: --var(--bg-lighter);
+  --header-active-bg: #6272a4;
+  --header-active-fg: var(--fg);
+  --header-fg: var(--fg);
+  --header-fg-alt: var(--fg);
+  --header-actived-fg: var(--fg);
+  --header-actived-bg: #6272a4;
+  --header-focused-fg: var(--header-actived-fg);
+  --header-focused-bg: var(--header-actived-bg);
+
+  --section-bg: var(--bg);
+  --section-fg: var(--fg);
+  --section-border: transparent;
+  --section-border-focus: solid #6272a4;
+  --section-border-size: 2px;
+  --section-header-fg: var(--fg);
+  --section-header-bg: var(--bg-lighter);
+  --section-header-padding: 10px 20px;
+
+  --skip-bg: var(--pink);
+  --skip-fg: var(--black);
+  --code-bg: var(--black);
+  --code-fg: var(--fg);
+
+  --link-regular-fg: var(--blue);
+  --link-regular-bg: transparent;
+  --link-visited-fg: var(--orange);
+  --link-visited-bg: transparent;
+  --link-hovered-fg: var(--pink); 
+  --link-hovered-bg: transparent;
+  --link-focused-fg: var(--link-hovered-fg);
+  --link-focused-bg: var(--link-hovered-bg);
+  --link-actived-fg: var(--link-hovered-fg);
+  --link-actived-bg: var(--link-hovered-bg);
+  
+  --selection-fg: var(--fg);
+  --selection-bg: var(--pink);
+  --focus-size: 3px;
+  --focus: var(--accent-contrast);
+} /* }}} */
+/* Customs {{{ */
+@media (prefers-color-scheme: light) {
+:root {
+  --black:           #1c1c1c;
+  --black-lighter:   #585858;
+  --white:           #d7afaf;
+  --white-lighter:   #f8f8f2;
+
+  --red:             #af0000;
+  --red-lighter:     #d70000;
+  --orange:          #000000;
+  --orange-lighter:  #000000;
+  --yellow:          #b67200;
+  --yellow-lighter:  #ffaf00;
+  --green:           #005f5f;
+  --green-lighter:   #00875f;
+  --blue:            #005f87;
+  --blue-lighter:    #0087d7;
+  --purple:          #5f005f;
+  --purple-lighter:  #875f87;
+  --pink:            #af005f;
+  --pink-lighter:    #d8005f;
+
+  --bg: #ffd477;
+  --bg-lighter: #ffe1b0;
+  --fg: #1a1b22;
+  --row-bg: transparent;
+
+  --accent: var(--yellow-lighter);
+  --accent-fg: var(--black);
+  --accent-darker: var(--yellow);
+  --accent-contrast: var(--red-lighter);
+  --accent-contrast-darker: var(--red);
+
+  --header-bg: var(--yellow-lighter);
+  --header-bg-alt: #ffbc56;
+  --header-fg: var(--fg);
+  --header-fg-alt: var(--fg);
+  --header-actived-fg: var(--bg);
+  --header-actived-bg: var(--accent-darker);
+  --header-focused-fg: var(--bg);
+  --header-focused-bg: var(--accent-darker);
+
+  --section-bg: var(--bg-lighter);
+  --section-fg: var(--fg);
+  --section-border: var(--accent-darker);
+  --section-border-focus: dashed var(--accent-contrast-darker);
+  --section-border-size: 2px;
+  --section-header-fg: var(--accent-contrast-darker);
+  --section-header-bg: var(--section-bg);
+  --section-header-padding: 10px 20px 0px;
+
+  --skip-bg: var(--black);
+  --skip-fg: #ffffff;
+  --code-bg: var(--accent);
+  --code-fg: var(--fg);
+
+  --link-regular-fg: var(--blue);
+  --link-regular-bg: transparent;
+  --link-visited-fg: var(--purple);
+  --link-visited-bg: var(--link-regular-bg);
+  --link-hovered-fg: var(--fg); 
+  --link-hovered-bg: var(--accent);
+  --link-focused-fg: var(--link-hovered-fg);
+  --link-focused-bg: var(--link-hovered-bg);
+  --link-actived-fg: var(--link-hovered-fg);
+  --link-actived-bg: var(--link-hovered-bg);
+  
+  --selection-fg: var(--bg);
+  --selection-bg: var(--black);
+  --focus-size: 1px;
+  --focus: var(--accent-contrast-darker);
+}} /* }}} */
+/* }}} */
+/* Big Things {{{ */
 html { 
-  /* Sitewide background */
-  background-color: #282a36;
-  /* Default fonts */
-  font-family: "Andika Rats", "Andika", Calibri, Tahoma, sans-serif;
+  background-color: var(--bg);
+  font-family: Calibri, Tahoma, sans-serif;
   font-size: 18pt;
+  height: 100%;
+  /* helps with the "fake viewport border" look */
+  padding: 2px;
 }
-body { margin: 0 } /* Defaults to 8?? */
-@font-face {
-  font-family: "Andika";
-  src: url(https://mimuki.net/fonts/andika/andika_regular.ttf);
-  font-display: swap; /* Show any text at all while it's loading */
+/* Add narrow lines at the top and bottom of the viewport */
+/* These aren't needed on the sides (just a 2px padding fakes the look) */
+html:before, html:after {
+    content: "";
+    position: fixed;
+    background: var(--bg);
+    left: 0;
+    right: 0;
+    height: 2px;
 }
 
-/* Headings */
+html:before { top: 0 }
+html:after { bottom: 0 }
+
+body { margin: 0 } /* Defaults to 8?? */
+
+/* Body is split into two parts, both inside of a row. */
+/* It makes sure .left and .right take up a good amount of space */
+.row {
+  background: var(--row-bg);
+  display: flex;
+  max-width: 1279px;
+  margin: 0 auto;
+}
+.left  { flex: 29% }
+.right { flex: 71% }
+/* }}} */
+/* Headings {{{ */
 h1, h2, h3, 
 h4, h5, h6 {
-  color: #f8f8f2;
+  color: var(--section-header-fg);
   margin: 0; /* defaults to 0.83em? */
   line-height: 100%; /* Defaults to... more than that */
 }
@@ -27,9 +198,10 @@ h3 { font-size: 22pt }
 h4 { font-size: 20pt }
 h5 { font-size: 18pt }
 h6 { font-size: 17pt }
-/* Defaults for most text */
+/* }}} */
+/* Regular text {{{ */
 p, ol, ul {
-  color: #f8f8f2;
+  color: var(--fg);
   line-height: 140%; /* The default is slightly more than this */
 }
 
@@ -45,52 +217,52 @@ ol, ul {
 
 li { padding: 0 }
 
-/* Link colours */
-a:link    { color: #8be9fd }
-a:visited { color: #ffb86c }
-a:hover,
-a:active,
-a:focus   { 
-  color: #ff79c6;
-  outline: none !important; 
-}
-/* Highlighted text */
-::selection {
-  color: #282a36;
-  background-color: #ff79c6;
-}
-/* Focus indicator */
-:focus {
-  box-shadow: inset 0 0 0 3px #ff79c6 !important;
-  outline: none;
-}
-/* Body is split into two parts, both inside of a row. */
-/* It makes sure .left and .right take up a good amount of space */
-.row {
-  display: flex;
-  max-width: 1279px;
-  margin: 0 auto;
-  background-color: #1e2029
-}
-.left  { flex: 30% }
-.right { flex: 70% }
-
 code {
   width: 90%;
-  color: #f8f8f2;
-  background: #232530;
+  color: var(--code-fg);
+  background: var(--code-bg);
   display: inline-block;
   margin: 2.5%;
   padding: 2.5%;
 }
-/* [1] Header Specific ------------------------------------------------------ */
-
-/* Improve header margins */
-#menu ul, #menu ol { 
-  margin-top: 4px; /* Fixes being slightly offscreen  */
-  margin-bottom: 4px; /* setting this to 3 or lower breaks things */
-  padding-left: 0; /* defaults to 40?! */
+/* }}} */
+/* Links {{{ */
+a:link    { 
+  color: var(--link-regular-fg);
+  background: var(--link-regular-bg);
 }
+a:visited { 
+  color: var(--link-visited-fg);
+  background: var(--link-visited-bg);
+}
+a:hover {
+  color: var(--link-hovered-fg);
+  background: var(--link-hovered-bg);
+}
+a:active {
+  color: var(--link-actived-fg);
+  background: var(--link-actived-bg);
+}
+a:focus {
+  color: var(--link-focused-fg);
+  background: var(--link-focused-bg);
+}
+/* }}} */
+/* Focus {{{ */
+/* Highlighted text */
+::selection {
+  color: var(--selection-fg);
+  background-color: var(--selection-bg);
+}
+/* Focus indicator */
+:focus {
+  box-shadow: inset 0 0 0 var(--focus-size) var(--focus) !important;
+  outline: none;
+}
+/* }}} */
+/* }}} */
+/* Header Specific {{{  */
+header { background: var(--header-bg) }
 /* Display top navbar's items all on the same line */
 #menu li, #inner-menu li { display: inline-block }
 /* jump tos etc are different */
@@ -99,43 +271,50 @@ code {
   box-sizing: border-box;
 }
 /* General header link styling */
-.headerRight,   /* see [PS] */
 #menu li a,     /* Top nav bar links */
 #inner-menu a { /* Jump-tos and other in-page menus */
-  color: #f8f8f2;
-  padding: 1px 0.4em; /* 2px to ensure it aligns with my browser UI */
+  color: var(--header-fg);
+  padding: 0.1em 0.6em; /* 2px to ensure it aligns with my browser UI */
   text-decoration: none; /* Don't underline */
   text-transform: lowercase;
   line-height: 100%; /* Helps with alignment */
 }
+/* Alternating colours for header and other menus */
+#menu li:nth-child(2n) a,
+#inner-menu li:nth-child(2n) a { 
+  background: var(--header-bg-alt);
+  color: var(--header-fg-alt);
+} 
 /* Jump to menus etc */
 #inner-menu a { 
   display: flex;
   justify-content: center;
-  line-height: 36px;
   margin: 0 !important; /* Avoids clashing with section a:focus */
 }
 /* Currently active page */
 .active a {
-  color: #282a36 !important; 
-  background: #8be9fd;
+  color: var(--header-actived-fg) !important; 
+  background: var(--header-actived-bg);
 }
 /* Currently hovered/focused link */
-#menu li:hover a,
 #menu a:focus:not(.skip), /* see [PS] */
-#inner-menu a:hover,
 #inner-menu a:focus {
-  background: #6272a4 !important;
-  color: #f8f8f2 !important;
+  background: var(--header-focused-bg) !important;
+  color: var(--header-focused-fg) !important;
 }
 
-/* * * * */
-
-/* [2] Section Specific ----------------------------------------------------- */
-
+#menu li:hover a,
+#inner-menu a:hover { 
+  background: var(--bg);
+  color: var(--fg);
+}
+/* }}} */
+/* Section Specific {{{ */
 section {
   margin: 10px;
-  background: #282a36;
+  background: var(--section-bg);
+  color: var(--section-fg);
+  border: var(--section-border-size) solid var(--section-border);
 }
 
 .left section { margin-right: 5px }
@@ -144,8 +323,8 @@ section {
 section h1,
 section h2,
 section h3 {
-  padding: 10px 20px;
-  background: #44475a;
+  padding: var(--section-header-padding);
+  background: var(--section-header-bg);
 }
 /* This gets changed in [PS] */
 section ul, section ol { padding: 7.5px 15px }
@@ -154,7 +333,8 @@ section ul, section ol { padding: 7.5px 15px }
   margin-left: 30px;
 }
 
-/* [3] Post-content --------------------------------------------------------- */
+/* }}} */
+/* Post-content {{{ */
 /* Webring */
 .webRing { text-align: center }
 .prev { float: left }
@@ -170,29 +350,16 @@ section ul, section ol { padding: 7.5px 15px }
   box-sizing: border-box; /* makes focus border behave */
   width: 88px; /* Default size, gets changed */
   image-rendering: pixelated; /* Look good pixel art */
-  margin: -6px; /* see [PS], this helps w focus */
-  border: 6px solid transparent;  /* '' */
+ /*  border: 12px solid transparent;  */
 }
 
 /* If two will fit side by side at double side (including 20px padding) */
 @media screen and (min-width: 372px) {
   .banner { width: 176px }
 }
-/* * * * * * * * * * * */
-/* [PS]  Precise Stuff */
-/* * * * * * * * * * * */
-
-/* [0] Core */
-
-/* [1] Header Specific */
-
-/* Focus indicator */
-/* Why?
- * * Certain stuff needs special handling, like banner images */
-.active a:focus {
-  box-shadow: inset 0 0 0 3px #8be9fd !important;
-}
-
+/* }}} */
+/* Precise Stuff {{{ */
+/* Header Specific {{{ */
 /* Makes text focus look nicer */
 /* Excluding .banners fixes that overflow focus issue */
 section:not(.banners) a:focus {
@@ -204,43 +371,35 @@ section:not(.banners) a:focus {
 .banners a { box-shadow: none !important }
 /* Show banner focus */
 .banners a:focus img {
-  border: 6px solid #f8f8f2;
+  /* border: 12px solid var(--yellow-lighter); */
   z-index: 10;/* display on top */
-  outline: 3px solid #ff79c6;
-  outline-offset: -3px; /* make the outline be inset */
+  outline: 12px solid var(--focus);
+  outline-offset: 0px; /* make the outline be inset */
 }
 
 /* Special coloured header links*/
 /* Why?
  * * .headerLeft makes the "home" button more obvious
- * * .headerRight looks fun, and could some day be used for a theme indicator or toggle. 
  * * .skip is important for keyboard only navigation- it's only visible sometimes, and needs to be distinct */
-.headerLeft {
-  background: #bd93f9;
-  color: #282a36 !important;
-}
-.headerRight {
-  margin-top: -4px; /* Adjust positioning */
-  line-height: 38px; /* Make tall enough to look good */
-  float: right;
-  background: #ffb86c;
-  color: #282a36;
+
+.headerLeft { 
+  background: var(--accent) !important;
+  color: var(--accent-fg) !important;
 }
 /* By default, be offscren */
 .skip {
   position: absolute;
   left: -1000px;
-  background: #ff79c6 !important;
-  color: #282a36 !important;
+  color: var(--skip-fg) !important;
+  background: var(--skip-bg) !important;
 }
 /* If focused (e.g. screenreader, pressing tab), make visible */
 .skip:focus-within {
   position: static;
   left: 0px;
-  text-align: left;
 }
-
-/* [2] Section Specific ----------------------------------------------------- */
+/* }}} */
+/* Section Specific {{{ */
 /* Better portrait */
 /* Why?
  * * Setting the max width will make it look nice, but if the section it's in
@@ -258,6 +417,7 @@ section:not(.banners) a:focus {
   image-rendering: pixelated;
 
 }
+
 /* Section Focus */
 /* Why?
  * * Just a tiny extra show of focus, and it's fun
@@ -266,9 +426,13 @@ section:not(.banners) a:focus {
  * 
  *   If I do, I should move this to the regular section */
 
-section:not(.banners) { outline: 2px solid #282a36 }
-section:not(.banners):focus-within { outline: 2px solid #6272a4 }
+section:not(.banners):focus-within { border: 2px var(--section-border-focus) }
 
+/* Outlines on the banners look bad, so i don't */
+.banners {
+  background: transparent;
+  border: 2px solid transparent;
+}
 /* Special Section Aesthetic Nonsense */
 /* Why?
  * * Visually, we want it to look like sections have a heading "on top" of them
@@ -298,8 +462,9 @@ section h2+ol,
 section h3+ol { padding-top: 15px }
 section ul:last-child,
 section ol:last-child { padding-bottom: 15px }
-
-/* [3] Mobile ----------------------------------------------------------- */
+/* }}} */
+/* }}} */
+/* Mobile {{{ */
 @media screen and (max-width: 1000px) {
   /* Single column mode */
   .left, .right, .row {
@@ -322,3 +487,5 @@ section ol:last-child { padding-bottom: 15px }
   .headerRight { display: none !important }
   /* no middle gap la margin can be same */
   .left section, .right section { margin: 10px }
+/* }}} */
+" vim: set sw=2 ts=2 sts=2 et tw=80 ft=vim fdm=marker:
