@@ -487,6 +487,14 @@ section h3 {
   background: #282a36;
   background: var(--section-header-bg);
 }
+
+section h4,
+section h5,
+section h6 {
+  padding: 10px 20px;
+  padding: var(--section-header-padding);
+}
+
 /* This gets changed in [PS] */
 section ul, section ol { padding: 7.5px 15px }
 .right section li {
