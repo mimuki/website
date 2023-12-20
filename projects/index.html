@@ -1,103 +1,26 @@
 <!DOCTYPE html>
-<html lang = "en" >
-
+<html>
 <head>
-  <title>Projects · mimuki.net</title>
-  <meta charset="UTF-8">
-  <meta name="description" content="All the fun things I'm working on (and all the fun things I've abandoned, too)">
-  <meta name="author" content="ilo Mimuki">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex">
-  <meta name="generator" content="Eleventy v2.0.1">
-  <link rel="icon" type="image/x-icon" href= /images/favicon.png>
-  <link rel="stylesheet" href="/css/theme.css">
-  <script src="/js/theme.js" defer></script>
+<link rel="Stylesheet" type="text/css" href="../style.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="../rss.xml">
+<title>index</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <header>
-  <script>
-      // Check if there's any override. If so, let the markup know by setting an attribute on the <html> element
-      const colorModeOverride = window.localStorage.getItem('color-mode');
-      const hasColorModeOverride = typeof colorModeOverride === 'string';
-      if (hasColorModeOverride) {
-        document.documentElement.setAttribute('data-force-color-mode', colorModeOverride);
-      }
-    </script>
-  <nav id="menu">
-    <ul>
-      <li><a href="#main" class="skip">Skip navigation</a></li
-      ><li><a href="/index.html" class="headerLeft">Home</a></li
-      ><li
-           >
-        <a href="/now/index.html">Now</a></li
-      ><li
-           class="active">
-        <a href="/projects/index.html">Projects</a></li
-      ><li
-           >
-        <a href="/thoughts/index.html">Thoughts</a></li
-      ><li
-           >
-        <a href="/contact/index.html">Contact</a></li
-      ><li>
-        <input type="checkbox" id="toggle-darkmode" /
-        ><label for="toggle-darkmode"><span>toggle light/dark mode</span></label>
-        <noscript>
-          <style>
-            #menu ul li label { display: none !important }
-          </style>
-        </noscript>
-        <script>
-          // Check the dark-mode checkbox if
-          // - The override is set to dark
-          // - No override is set but the system prefers dark mode
-          if ((colorModeOverride == 'dark') || (!hasColorModeOverride && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-              document.querySelector('#toggle-darkmode').checked = true;
-          }
-        </script></li
-        ><li>
-        <a id="reset-darkmode" href="#" title="Reset theme to browser default">(reset)</a>
-    </ul>
-  </nav>
-</header>
 
-<main id="main" class="row">
-  <div class="left">
-  <section>
-    <h1>Projects</h1> 
-    
-    <p>
-    All the fun things I'm working on (and all the fun things I've abandoned, too)
-    </p>
-  </section>
-  
-</div>
-<div class="right">
-  <section>
-<h2>Active</h2>
-<ul>
-<li><a href="/projects/beads/">Prayer bead experiments</a></li>
-<li><a href="/projects/knitting/">Government Mandated Knitting</a></li>
-</ul>
-</section><section>
-<h2>Finished</h2>
-<ul>
-<li><a href="/projects/banners/">Banners!</a></li>
-</ul>
-</section><section>
-<h2>Idle</h2>
-<ul>
-<li><a href="/projects/keyboard/">Leg mounted keyboard dreams</a></li>
-<li>(many that predate this website)</li>
-</ul>
-</section>
-
-</div>
-
-
-
-</main>
+<div id="Projects"><h1 id="Projects" class="header"><a href="#Projects">Projects</a></h1></div>
+<p>
+Stuff I make that I like enough to keep online. 
+</p>
+<div id="Projects-In progress"><h2 id="In progress" class="header"><a href="#Projects-In progress">In progress</a></h2></div>
+<p>
+<a href="knitting &amp; crochet.html">knitting &amp; crochet</a> - I made string into things
+</p>
+<div id="Projects-Finished"><h2 id="Finished" class="header"><a href="#Projects-Finished">Finished</a></h2></div>
+<p>
+<a href="banners.html">banners</a> - I made images you can use to link to this website
+</p>
 
 </body>
 </html>
-    

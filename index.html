@@ -1,154 +1,73 @@
 <!DOCTYPE html>
-<html lang = "en" >
-
+<html>
 <head>
-  <title>home · mimuki.net</title>
-  <meta charset="UTF-8">
-  <meta name="description" content="My website, home to several hundred rats. Mind the dust.">
-  <meta name="author" content="ilo Mimuki">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex">
-  <meta name="generator" content="Eleventy v2.0.1">
-  <link rel="icon" type="image/x-icon" href= /images/favicon.png>
-  <link rel="stylesheet" href="/css/theme.css">
-  <script src="/js/theme.js" defer></script>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<link rel="alternate" type="application/rss+xml" title="RSS" href="rss.xml">
+<title>index</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-  <header>
-  <script>
-      // Check if there's any override. If so, let the markup know by setting an attribute on the <html> element
-      const colorModeOverride = window.localStorage.getItem('color-mode');
-      const hasColorModeOverride = typeof colorModeOverride === 'string';
-      if (hasColorModeOverride) {
-        document.documentElement.setAttribute('data-force-color-mode', colorModeOverride);
-      }
-    </script>
-  <nav id="menu">
-    <ul>
-      <li><a href="#main" class="skip">Skip navigation</a></li
-      ><li><a href="/index.html" class="headerLeft">Home</a></li
-      ><li
-           >
-        <a href="/now/index.html">Now</a></li
-      ><li
-           >
-        <a href="/projects/index.html">Projects</a></li
-      ><li
-           >
-        <a href="/thoughts/index.html">Thoughts</a></li
-      ><li
-           >
-        <a href="/contact/index.html">Contact</a></li
-      ><li>
-        <input type="checkbox" id="toggle-darkmode" /
-        ><label for="toggle-darkmode"><span>toggle light/dark mode</span></label>
-        <noscript>
-          <style>
-            #menu ul li label { display: none !important }
-          </style>
-        </noscript>
-        <script>
-          // Check the dark-mode checkbox if
-          // - The override is set to dark
-          // - No override is set but the system prefers dark mode
-          if ((colorModeOverride == 'dark') || (!hasColorModeOverride && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-              document.querySelector('#toggle-darkmode').checked = true;
-          }
-        </script></li
-        ><li>
-        <a id="reset-darkmode" href="#" title="Reset theme to browser default">(reset)</a>
-    </ul>
-  </nav>
-</header>
 
-<main id="main" class="row">
-  <div class="left">
-  <section id="about">
-    <h1>...where am I?</h1>
-    <img src="/images/avatar.png"
-         alt="drawing of myself, a fair skinned Aboriginal man with a purple headscarf, tinted glasses, and a Mjölnir necklace.">
-    <p>
-    This is my little corner of the internet. I'm a 23 year old full time cyborg with things I feel like sharing. My hobbies include video games, tinkering with old stuff, hitting bigots in the kneecaps, and knitting.
-    </p>
-    <p>
-    I have a hate-hate relationship with social media, but <a rel="me" href="https://weirder.earth/@mouseless">you might know me from the Fediverse</a>.
-    </p>
-  </section>
-</div>
-<div class="right">
-  <section>
-    <h2>The most website of all time!</h2>
-    <p>
-    Feel free to poke around, try and break things, steal ideas, and anything else that serves you well. This is my metaphorical workshop, and the door is open. (in that analogy, what are my tools? when one of my friends "borrows" a hammer and never returns it, what does that mean? what's the website equivalent to a laser printer?)
-    </p>
-  </section>
-  <section>
-    <h2>Recent changes</h2>
-    <p>
-    Cool updates will live here for a while, when I remember to.
-    </p>
-    <ul>
-      <li>
-        Removed the About page, because I realized I was never going to write anything in there that couldn't live on my home page.
-      </li>
-      <li>
-        Added a light mode toggle! It'll detect your browser (maybe OS?) preference, and on old browsers <em>should</em> default to dark mode. You can also switch manually if you have javascript enabled.
-      </li>
-      <li>
-        Started a new project, <a href="/projects/beads">experimenting with making my own prayer beads.</a>
-      </li>
-    </ul>
-  </section>
-  <section class=webRing>
-    <p>
-    <a href="https://sike.pona.la/"
-       aria-label="sike pona, a toki pona webring">
-      sike pona
-    </a>
-    <a href="https://sike.pona.la/jan/ilo Mimuki/prev.html"
-       aria-label="previous website"
-       class="prev">
-      &lt;==
-    </a>
-    <a href="https://sike.pona.la/jan/ilo Mimuki/next.html"
-       aria-label="next website"
-       class="next">
-      ==&gt;
-    </a>
-    </p>
-  </section>
+<div id="Home"><h1 id="Home" class="header"><a href="#Home">Home</a></h1></div>
+<div id="Home-Who am I?"><h2 id="Who am I?" class="header"><a href="#Home-Who am I?">Who am I?</a></h2></div>
+<p>
+Good question! Some phrases that could be used to describe me are:
+</p>
+<ul>
+<li>
+bitter cripplepunk disaster
 
-  <section class=banners><a href="/projects/banners"><img class="banner"
-           src="/images/mimuki.png"
-           alt="mimuki's website"
-      ></a><a href="https://beefox.xyz"><img class="banner"
-           src="https://beefox.xyz/buttons/88x31-beefox.gif"
-           alt="BeeFox.xyz"
-      ></a><a href="https://devurandom.xyz/"><img class="banner"
-           src="https://devurandom.xyz/banners/my_banner.gif"
-           alt="rnd's corner"
-      ></a><img class="banner"
-           src="/images/human_made.png"
-           alt="human made, not by AI"
-      ><a href="https://berrymot.github.io/"><img class="banner"
-           src="https://berrymot.github.io/startrek/8831.png"
-           alt="data relay 6"
-      ></a><a href="https://kokoscript.com/"><img class="banner"
-           src="https://kokoscript.com/img/button/kokoscript.gif"
-           alt="Koko's Interactive Desktop"
-      ></a><a href="https://temili.neocities.org/"lang="tok"><img class="banner"
-           src="https://temili.neocities.org/pics/buttons/temilibutton.png"
-           alt="lipu pi jan Temili"
-      ></a><a href="https://circusfreaks.org/"><img class="banner"
-           src="/images/circus_freaks.png"
-           alt="Circus Freaks- professional grade whimsy"
-      ></a><a href="https://nordicanimism.com/"><img class="banner"
-           src="/images/animism.png"
-           alt="Nordic Animism"
-      ></a></section>
+<li>
+novice contemplative
 
-</main>
+<li>
+DIY cyborg
+
+<li>
+consistently inconsistent
+
+<li>
+regretful computer toucher
+
+</ul>
+<p>
+My pronouns are he/him, except when they aren't. I'm in my mid 20s, and am reaching that point in life where it's too much effort to increment my age on websites every year.
+</p>
+
+<div id="Home-Why a website?"><h2 id="Why a website?" class="header"><a href="#Home-Why a website?">Why a website?</a></h2></div>
+<p>
+I have lots of things I feel like saying, and I make this site first for me, and second for anyone who will benefit from it. I design it based on my own whims, but ideally without totally sacrificing accessibility. 
+</p>
+
+<p>
+You might remember the old website- it was very pretty, but it was not making me happy. I was overwhelmed by its complexity, and I'm trying a more plaintexty approach, and taking things extra slow, even if that means things look a bit bland and boring for now.
+</p>
+
+<div id="Home-Additional shenanigans"><h2 id="Additional shenanigans" class="header"><a href="#Home-Additional shenanigans">Additional shenanigans</a></h2></div>
+<ul>
+<li>
+<a href="projects/index.html">projects/</a> - bigger things I'm working on
+
+<li>
+<a href="todo/index.html">todo/</a> - To do lists of all sizes
+
+<li>
+<a href="now.html">now</a> - what I'm up to, at a glance
+
+<li>
+<a href="contact.html">contact</a> - commune with the webmaster from the comfort of your home
+
+<li>
+<a href="other sites.html">other sites</a> - a curated list of websites
+
+</ul>
+<div id="Home-Webrings"><h2 id="Webrings" class="header"><a href="#Home-Webrings">Webrings</a></h2></div>
+<ul>
+<li>
+<a href="https://sike.pona.la">sike pona</a> (<a href="https://sike.pona.la/jan/ilo%20Mimuki/prev.html">go back</a>, <a href="https://sike.pona.la/jan/ilo%20Mimuki/next.html">go forth</a>)
+
+</ul>
 
 </body>
 </html>
-    
