@@ -78,7 +78,10 @@ dt { font-weight: bold; }
 footer { border-top: 1px solid #ccc }
 footer p { color: #333 }
 
-img { border: none; }
+img { 
+  border: none;
+  max-width: 100%; 
+}
 
 pre {
   border-left: 5px solid #dcdcdc;
