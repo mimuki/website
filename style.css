@@ -1,4 +1,4 @@
-/* Default & manually selected light theme */
+/* Default (as in, <noscript>) & manually selected light theme */
 :root,
 [data-selected-theme="light"] {
   --site-bg: #FFFFFF;
@@ -21,7 +21,7 @@
   --head-bg-focus: #EDEDED;
   --head-fg-focus: #000000;
 }
-
+/* Manually selected dark theme */
 [data-selected-theme="dark"] {
   --site-bg: #000000;
   --site-fg: #FFFFFF;
@@ -40,6 +40,8 @@
 
   --link-bg-focus: #FFFFFF;
   --link-fg-focus: #404040;
+  --link-bg-active: #808080;
+  --link-fg-active: #000000;
   --head-bg-focus: #202020;
   --head-fg-focus: #EDEDED;
 }
@@ -51,7 +53,7 @@
   --site-bg-muted: #FFA45B;
   /* Things that need to be legible but aren't important; disabled text etc */
   --site-fg-muted: #333333;
-  --link-bg: #EDEDED;
+  --link-bg: #F9C69D;
   --link-fg: #000000;
   --head-bg: transparent;
   --head-fg: #000000;
@@ -60,16 +62,20 @@
   --block-bg: #CCCCCC;
   --block-fg: #F5F5F5;
 
-  --link-bg-focus: #404040;
+  --link-bg-focus: #202020;
   --link-fg-focus: #FFFFFF;
-  --head-bg-focus: #EDEDED;
+  --link-bg-active: #9F9F9F;
+  --link-fg-active: #000000;
+  --head-bg-focus: #F9C69D;
   --head-fg-focus: #000000;
 }
 
 button[aria-pressed="true"] {
-  background: var(--link-bg-focus);
-  color: var(--link-fg-focus);
+  background: var(--link-bg-active);
+  color: var(--link-fg-active);
+  box-shadow: 0 0 8px var(--link-bg-focus);
 }
+
 
 body {
   background-color: var(--site-bg);
@@ -176,7 +182,8 @@ pre {
 }
 
 p > a,
-li > a {
+li > a,
+button {
   background-color: var(--link-bg);
   color: var(--link-fg);
   text-decoration: none;
@@ -184,13 +191,17 @@ li > a {
   padding: 2px 4px;
   border-radius: 3px;
   text-transform: uppercase;
+  font-family: inherit; /* for unknown reasons, buttons use wrong font w/o ni */
   font-weight: bold;
+  border: none;
+  outline: none;
 }
 
 p > a:hover,
 p > a:focus,
 li > a:hover,
-li > a:focus {
+li > a:focus,
+button:hover, button:focus {
   background-color: var(--link-bg-focus);
   color: var(--link-fg-focus);
   outline: none;

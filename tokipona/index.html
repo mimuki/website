@@ -10,11 +10,7 @@
   <body>
     <div class="content">
       <h1 class="header justcenter">toki pona</h1>
-      <div class="theme-switcher">
-        <button data-theme="light"  aria-pressed="true">Light</button>
-        <button data-theme="dark"   aria-pressed="false">Dark</button>
-        <button data-theme="orange" aria-pressed="false">Orange</button>
-      </div>
+      <noscript><style> .javascript { display: none } </style></noscript>
       <script>
         const pressedButtonSelector = '[data-theme][aria-pressed="true"]';
         const defaultTheme = 'light';
@@ -22,7 +18,9 @@
         const applyTheme = (theme) => {
           const target = document.querySelector(`[data-theme="${theme}"]`);
           document.documentElement.setAttribute("data-selected-theme", theme);
+          /* unpress everything */
           document.querySelector(pressedButtonSelector).setAttribute('aria-pressed', 'false');
+          /* press just ur button */
           target.setAttribute('aria-pressed', 'true');
         };
 
@@ -90,7 +88,37 @@ nimi ante li ken pona lon tenpo. taso a! o awen! o toki ala e nimi "jan Mimuki";
     <footer>
       <p>
       last update: 2023-12-22 · no one you look up to is better than you are · <a href="https://ko-fi.com/therats">donations</a> · <a href="https://github.com/mimuki/mimuki.github.io">source</a>
+  <button class="javascript themeToggle" onclick="toggleThemeMenu()" aria-pressed="False">Toggle theme settings</button>
+
+      <div class="theme-switcher javascript">
+        <button data-theme="light"  aria-pressed="true">Light</button>
+        <button data-theme="dark"   aria-pressed="false">Dark</button>
+        <button data-theme="orange" aria-pressed="false">Orange</button>
+      </div>
       </p>
+
+
+      <script>
+        const menuShow = localStorage.getItem('theme-menu');
+        if (menuShow == "false") {
+          themeSwitcher.style.display = "none";
+          document.querySelector('.themeToggle').innerHTML = "Show theme settings";
+        } else {
+            document.querySelector('.themeToggle').innerHTML = "Hide theme settings";
+        }
+        function toggleThemeMenu() {
+          if (themeSwitcher.style.display === "none") {
+            themeSwitcher.style.display = "block";
+            document.querySelector('.themeToggle').innerHTML = "Hide theme settings";
+            localStorage.setItem('theme-menu', "true");
+          } else {
+            themeSwitcher.style.display = "none";
+            document.querySelector('.themeToggle').innerHTML = "Show theme settings";
+            localStorage.setItem('theme-menu', "false");
+          }
+        }
+      </script>
+
     </footer>
   </body>
 </html>
