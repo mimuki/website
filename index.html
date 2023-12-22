@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
   <head>
     <link rel="Stylesheet" type="text/css" href="style.css" />
@@ -9,6 +10,50 @@
   <body>
     <div class="content">
       <h1 class="header justcenter">Home</h1>
+      <div class="theme-switcher">
+        <button data-theme="light"  aria-pressed="true">Light</button>
+        <button data-theme="dark"   aria-pressed="false">Dark</button>
+        <button data-theme="orange" aria-pressed="false">Orange</button>
+      </div>
+      <script>
+        const pressedButtonSelector = '[data-theme][aria-pressed="true"]';
+        const defaultTheme = 'light';
+
+        const applyTheme = (theme) => {
+          const target = document.querySelector(`[data-theme="${theme}"]`);
+          document.documentElement.setAttribute("data-selected-theme", theme);
+          document.querySelector(pressedButtonSelector).setAttribute('aria-pressed', 'false');
+          target.setAttribute('aria-pressed', 'true');
+        };
+
+        const handleThemeSelection = (event) => {
+          const target = event.target;
+          const isPressed = target.getAttribute('aria-pressed');
+          const theme = target.getAttribute('data-theme');        
+  
+          if(isPressed !== "true") {
+            applyTheme(theme);
+            localStorage.setItem('selected-theme', theme);
+          }
+        }
+
+        const setInitialTheme = () => {
+          const savedTheme = localStorage.getItem('selected-theme');
+          if(savedTheme && savedTheme !== defaultTheme) {
+            applyTheme(savedTheme);
+          }
+        };
+
+        setInitialTheme();
+
+        const themeSwitcher = document.querySelector('.theme-switcher');
+        const buttons = themeSwitcher.querySelectorAll('button');
+
+        buttons.forEach((button) => {
+          button.addEventListener('click', handleThemeSelection);
+        });
+
+      </script>
       
 <div id="Who am I?"><h2 id="Who am I?" class="header"><a href="#Who am I?">Who am I?</a></h2></div>
 <p>
@@ -81,7 +126,7 @@ You might remember the old website- it was very pretty, but it was not making me
     </div>
     <footer>
       <p>
-      last update: 2023-12-21 · no one you look up to is better than you are · <a href="https://ko-fi.com/therats">donations</a> · <a href="https://github.com/mimuki/mimuki.github.io">source</a>
+      last update: 2023-12-22 · no one you look up to is better than you are · <a href="https://ko-fi.com/therats">donations</a> · <a href="https://github.com/mimuki/mimuki.github.io">source</a>
       </p>
     </footer>
   </body>

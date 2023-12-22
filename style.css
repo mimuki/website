@@ -1,4 +1,79 @@
+/* Default & manually selected light theme */
+:root,
+[data-selected-theme="light"] {
+  --site-bg: #FFFFFF;
+  --site-fg: #000000;
+  /* Things that go on site-bg but aren't essential; think dividing lines etc */
+  --site-bg-muted: #CCCCCC;
+  /* Things that need to be legible but aren't important; disabled text etc */
+  --site-fg-muted: #333333;
+  --link-bg: #EDEDED;
+  --link-fg: #000000;
+  --head-bg: transparent;
+  --head-fg: #000000;
+
+  /* Code blocks and similar- need colours similar to site-bg, but not quite */
+  --block-bg: #CCCCCC;
+  --block-fg: #F5F5F5;
+
+  --link-bg-focus: #404040;
+  --link-fg-focus: #FFFFFF;
+  --head-bg-focus: #EDEDED;
+  --head-fg-focus: #000000;
+}
+
+[data-selected-theme="dark"] {
+  --site-bg: #000000;
+  --site-fg: #FFFFFF;
+  /* Things that go on site-bg but aren't essential; think dividing lines etc */
+  --site-bg-muted: #333333;
+  /* Things that need to be legible but aren't important; disabled text etc */
+  --site-fg-muted: #CCCCCC;
+  --link-bg: #404040;
+  --link-fg: #EDEDED;
+  --head-bg: transparent;
+  --head-fg: #FFFFFF;
+
+  /* Code blocks and similar- need colours similar to site-bg, but not quite */
+  --block-bg: #202020;
+  --block-fg: #F5F5F5;
+
+  --link-bg-focus: #FFFFFF;
+  --link-fg-focus: #404040;
+  --head-bg-focus: #202020;
+  --head-fg-focus: #EDEDED;
+}
+
+[data-selected-theme="orange"] {
+  --site-bg: #FF7200;
+  --site-fg: #000000;
+  /* Things that go on site-bg but aren't essential; think dividing lines etc */
+  --site-bg-muted: #FFA45B;
+  /* Things that need to be legible but aren't important; disabled text etc */
+  --site-fg-muted: #333333;
+  --link-bg: #EDEDED;
+  --link-fg: #000000;
+  --head-bg: transparent;
+  --head-fg: #000000;
+
+  /* Code blocks and similar- need colours similar to site-bg, but not quite */
+  --block-bg: #CCCCCC;
+  --block-fg: #F5F5F5;
+
+  --link-bg-focus: #404040;
+  --link-fg-focus: #FFFFFF;
+  --head-bg-focus: #EDEDED;
+  --head-fg-focus: #000000;
+}
+
+button[aria-pressed="true"] {
+  background: var(--link-bg-focus);
+  color: var(--link-fg-focus);
+}
+
 body {
+  background-color: var(--site-bg);
+  color: var(--site-fg);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   margin: 0 20%;
   font-size: 140%;
@@ -21,12 +96,12 @@ h2, h3, h4, h5, h6 {
   margin: 0;
 }
 
-h1 { font-size: 2em;   color: #000000 }
-h2 { font-size: 1.8em; color: #202020 }
-h3 { font-size: 1.6em; color: #404040 }
-h4 { font-size: 1.4em; color: #707070 }
-h5 { font-size: 1.2em; color: #404040 }
-h6 { font-size: 1em;   color: #202020 }
+h1 { font-size: 2.0em; background-color: var(--head-bg); color: var(--head-fg) }
+h2 { font-size: 1.8em; background-color: var(--head-bg); color: var(--head-fg) }
+h3 { font-size: 1.6em; background-color: var(--head-bg); color: var(--head-fg) }
+h4 { font-size: 1.4em; background-color: var(--head-bg); color: var(--head-fg) }
+h5 { font-size: 1.2em; background-color: var(--head-bg); color: var(--head-fg) }
+h6 { font-size: 1.0em; background-color: var(--head-bg); color: var(--head-fg) }
 
 /* adds enough padding on the left to include the # without moving text around 
  * when it appears and disappears. */
@@ -47,12 +122,13 @@ h3 a:hover, h3 a:focus,
 h4 a:hover, h4 a:focus,
 h5 a:hover, h5 a:focus,
 h6 a:hover, h6 a:focus {
-  background-color: #ededed;
+  background-color: var(--head-bg-focus);
+  color: var(--head-fg-focus);
   outline: none;
   border-radius: 9px;
   /* first shadow: very subtle highlight
    * second shadow: blur the background */
-  box-shadow: 0px -2px 5px -4px white, 0 0 8px #ededed;
+  box-shadow: 0px -2px 5px -4px white, 0 0 8px var(--head-bg-focus);
 }
 
 p, pre, blockquote, table, ul, ol, dl {
@@ -75,8 +151,8 @@ ul {
 dt { font-weight: bold; }
 
 /* Add some visual seperation between footer and not-footer */
-footer { border-top: 1px solid #ccc }
-footer p { color: #333 }
+footer { border-top: 1px solid var(--site-bg-muted) }
+footer p { color: var(--site-fg-muted) }
 
 img { 
   border: none;
@@ -84,8 +160,9 @@ img {
 }
 
 pre {
-  border-left: 5px solid #dcdcdc;
-  background-color: #f5f5f5;
+  border-left: 5px solid var(--site-bg-muted);
+  background-color: var(--block-bg);
+  color: var(--block-fg);
   padding-left: 1em;
   font-family: Monaco, "Courier New", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", monospace;
   font-size: 0.8em;
@@ -100,10 +177,11 @@ pre {
 
 p > a,
 li > a {
+  background-color: var(--link-bg);
+  color: var(--link-fg);
   text-decoration: none;
   font-size: 0.8em;
   padding: 2px 4px;
-  background-color: #ededed;
   border-radius: 3px;
   text-transform: uppercase;
   font-weight: bold;
@@ -113,22 +191,24 @@ p > a:hover,
 p > a:focus,
 li > a:hover,
 li > a:focus {
-  color: #ffffff;
-  background-color: #484848;
+  background-color: var(--link-bg-focus);
+  color: var(--link-fg-focus);
   outline: none;
+  /* shadow: simple blur */
+  box-shadow: 0 0 8px var(--link-bg-focus);
 }
 
 blockquote {
-  color: #333;
+  color: var(--site-fg-muted);
+  border-left: 5px solid var(--site-bg-muted);
   padding: 0.2em;
   margin: 0.5em;
-  border-left: 5px solid #dcdcdc;
 }
 
 blockquote p { margin: 0px } 
 
 th, td {
-  border: 1px solid #ccc;
+  border: 1px solid var(--grey200);
   padding: 0.3em;
 }
 
@@ -136,7 +216,7 @@ th { background-color: #f0f0f0; }
 
 hr {
   border: none;
-  border-top: 1px solid #ccc;
+  border-top: 1px solid var(--site-bg-muted);
   width: 100%;
 }
 
@@ -228,6 +308,6 @@ code {
   padding: 0px 3px;
   display: inline-block;
   color: #52595d;
-  border: 1px solid #ccc;
+  border: 1px solid var(--grey200);
   background-color: #f9f9f9;
 }

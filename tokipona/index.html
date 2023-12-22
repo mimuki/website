@@ -1,3 +1,4 @@
+<!doctype html>
 <html>
   <head>
     <link rel="Stylesheet" type="text/css" href="../style.css" />
@@ -9,6 +10,50 @@
   <body>
     <div class="content">
       <h1 class="header justcenter">toki pona</h1>
+      <div class="theme-switcher">
+        <button data-theme="light"  aria-pressed="true">Light</button>
+        <button data-theme="dark"   aria-pressed="false">Dark</button>
+        <button data-theme="orange" aria-pressed="false">Orange</button>
+      </div>
+      <script>
+        const pressedButtonSelector = '[data-theme][aria-pressed="true"]';
+        const defaultTheme = 'light';
+
+        const applyTheme = (theme) => {
+          const target = document.querySelector(`[data-theme="${theme}"]`);
+          document.documentElement.setAttribute("data-selected-theme", theme);
+          document.querySelector(pressedButtonSelector).setAttribute('aria-pressed', 'false');
+          target.setAttribute('aria-pressed', 'true');
+        };
+
+        const handleThemeSelection = (event) => {
+          const target = event.target;
+          const isPressed = target.getAttribute('aria-pressed');
+          const theme = target.getAttribute('data-theme');        
+  
+          if(isPressed !== "true") {
+            applyTheme(theme);
+            localStorage.setItem('selected-theme', theme);
+          }
+        }
+
+        const setInitialTheme = () => {
+          const savedTheme = localStorage.getItem('selected-theme');
+          if(savedTheme && savedTheme !== defaultTheme) {
+            applyTheme(savedTheme);
+          }
+        };
+
+        setInitialTheme();
+
+        const themeSwitcher = document.querySelector('.theme-switcher');
+        const buttons = themeSwitcher.querySelectorAll('button');
+
+        buttons.forEach((button) => {
+          button.addEventListener('click', handleThemeSelection);
+        });
+
+      </script>
       
 <p>
 toki! lipu ale mi pi toki pona li lon.
@@ -44,7 +89,7 @@ nimi ante li ken pona lon tenpo. taso a! o awen! o toki ala e nimi "jan Mimuki";
     </div>
     <footer>
       <p>
-      last update: 2023-12-21 · no one you look up to is better than you are · <a href="https://ko-fi.com/therats">donations</a> · <a href="https://github.com/mimuki/mimuki.github.io">source</a>
+      last update: 2023-12-22 · no one you look up to is better than you are · <a href="https://ko-fi.com/therats">donations</a> · <a href="https://github.com/mimuki/mimuki.github.io">source</a>
       </p>
     </footer>
   </body>
