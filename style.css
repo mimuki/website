@@ -13,12 +13,12 @@
   --head-fg: #000000;
 
   /* Code blocks and similar- need colours similar to site-bg, but not quite */
-  --block-bg: #CCCCCC;
-  --block-fg: #F5F5F5;
+  --block-bg: #EDEDED;
+  --block-fg: #000000;
 
-  --link-bg-focus: #404040;
-  --link-fg-focus: #FFFFFF;
-  --head-bg-focus: #EDEDED;
+  --link-bg-focus: #FFFFFF;
+  --link-fg-focus: #000000;
+  --head-bg-focus: #FFFFFF;
   --head-fg-focus: #000000;
 }
 /* Manually selected dark theme */
@@ -38,8 +38,8 @@
   --block-bg: #202020;
   --block-fg: #F5F5F5;
 
-  --link-bg-focus: #FFFFFF;
-  --link-fg-focus: #404040;
+  --link-bg-focus: #202020;
+  --link-fg-focus: #EDEDED;
   --link-bg-active: #808080;
   --link-fg-active: #000000;
   --head-bg-focus: #202020;
@@ -53,17 +53,17 @@
   --site-bg-muted: #FFA45B;
   /* Things that need to be legible but aren't important; disabled text etc */
   --site-fg-muted: #333333;
-  --link-bg: #F9C69D;
-  --link-fg: #000000;
+  --link-bg: #680000;
+  --link-fg: #F9C69D;
   --head-bg: transparent;
   --head-fg: #000000;
 
   /* Code blocks and similar- need colours similar to site-bg, but not quite */
-  --block-bg: #CCCCCC;
-  --block-fg: #F5F5F5;
+  --block-bg: #F9C69D;
+  --block-fg: #000000;
 
-  --link-bg-focus: #202020;
-  --link-fg-focus: #FFFFFF;
+  --link-bg-focus: #F9C69D;
+  --link-fg-focus: #000000;
   --link-bg-active: #9F9F9F;
   --link-fg-active: #000000;
   --head-bg-focus: #F9C69D;
@@ -111,7 +111,7 @@ h6 { font-size: 1.0em; background-color: var(--head-bg); color: var(--head-fg) }
 
 /* adds enough padding on the left to include the # without moving text around 
  * when it appears and disappears. */
-h2 a, h3 a, h4 a, h5 a, h6 a { padding: 0 0.4em 0 1em }
+h2 a, h3 a, h4 a, h5 a, h6 a { padding: 0.1em 0.1em 0.1em 1em }
 
 /* Adds the #, and then shifts everything back over so it looks like magic. */
 h2 a:hover::before, h2 a:focus::before,
@@ -120,7 +120,7 @@ h4 a:hover::before, h4 a:focus::before,
 h5 a:hover::before, h5 a:focus::before,
 h6 a:hover::before, h6 a:focus::before {
   content: "# ";
-  margin-left: -0.9em;
+  margin-left: -0.93em;
 }
 
 h2 a:hover, h2 a:focus,
@@ -131,10 +131,9 @@ h6 a:hover, h6 a:focus {
   background-color: var(--head-bg-focus);
   color: var(--head-fg-focus);
   outline: none;
-  border-radius: 9px;
-  /* first shadow: very subtle highlight
-   * second shadow: blur the background */
-  box-shadow: 0px -2px 5px -4px white, 0 0 8px var(--head-bg-focus);
+  border: 1px solid var(--head-fg-focus);
+
+  box-shadow: 5px 5px 0px var(--head-fg-focus);
 }
 
 p, pre, blockquote, table, ul, ol, dl {
@@ -189,7 +188,6 @@ button {
   text-decoration: none;
   font-size: 0.8em;
   padding: 2px 4px;
-  border-radius: 3px;
   text-transform: uppercase;
   font-family: inherit; /* for unknown reasons, buttons use wrong font w/o ni */
   font-weight: bold;
@@ -204,9 +202,9 @@ li > a:focus,
 button:hover, button:focus {
   background-color: var(--link-bg-focus);
   color: var(--link-fg-focus);
-  outline: none;
+  outline: 1px solid var(--link-fg-focus);
   /* shadow: simple blur */
-  box-shadow: 0 0 8px var(--link-bg-focus);
+  box-shadow: 4px 4px 0px var(--link-fg-focus);
 }
 
 blockquote {
