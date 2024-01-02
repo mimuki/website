@@ -98,32 +98,32 @@ body {
   }
 }
 
+h1, h2, h3, h4, h5, h6 {
+  background-color: var(--head-bg);
+  color: var(--head-fg);
+}
+
 h2, h3, h4, h5, h6 {
+  font-family: sans-serif;
   font-weight: bold;
   line-height:100%;
   margin: 0;
 }
 
-h1 { font-size: 2.0em; background-color: var(--head-bg); color: var(--head-fg) }
-h2 { font-size: 1.8em; background-color: var(--head-bg); color: var(--head-fg) }
-h3 { font-size: 1.6em; background-color: var(--head-bg); color: var(--head-fg) }
-h4 { font-size: 1.4em; background-color: var(--head-bg); color: var(--head-fg) }
-h5 { font-size: 1.2em; background-color: var(--head-bg); color: var(--head-fg) }
-h6 { font-size: 1.0em; background-color: var(--head-bg); color: var(--head-fg) }
-
-/* adds enough padding on the left to include the # without moving text around 
- * when it appears and disappears. */
-h2 a, h3 a, h4 a, h5 a, h6 a { padding: 0.1em 0.1em 0.1em 1em }
-
-/* Adds the #, and then shifts everything back over so it looks like magic. */
-div[id]:hover > h2 a::before, h2 a:focus::before,
-div[id]:hover > h3 a::before, h3 a:focus::before,
-div[id]:hover > h4 a::before, h4 a:focus::before,
-div[id]:hover > h5 a::before, h5 a:focus::before,
-div[id]:hover > h6 a::before, h6 a:focus::before {
-  content: "# ";
-  margin-left: -0.9em;
+h1 { 
+  font-family: lora, 'URW Bookman', 'URW Bookman L',  Georgia, Superclarendon, 'Bookman Old Style', serif;
+  font-weight: 550;
+  font-style: italic;
 }
+
+h2 { font-size: 1.8em }
+h3 { font-size: 1.6em }
+h4 { font-size: 1.4em }
+h5 { font-size: 1.2em }
+h6 { font-size: 1.0em }
+
+h2 a, h3 a, h4 a, h5 a, h6 a { padding: 0.1em }
+
 /* We do the focus indication with the div instead so there's no gross wrapping
  * on new lines */
 h2 a:hover, h2 a:focus,
@@ -135,6 +135,7 @@ h6 a:hover, h6 a:focus {
   outline: none;
   box-shadow: none;
 }
+
 /* hope and pray and beg that this never gets applied to the wrong thing, ig */
 /* future me needs to make vimwiki spit out divs for the headings that have a
  * unique class or something */
