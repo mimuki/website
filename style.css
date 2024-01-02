@@ -18,6 +18,8 @@
 
   --link-bg-focus: #FFFFFF;
   --link-fg-focus: #000000;
+  --link-bg-active: #CCCCCC;
+  --link-fg-active: #000000;
   --head-bg-focus: #FFFFFF;
   --head-fg-focus: #000000;
 }
@@ -41,13 +43,13 @@
   --link-bg-focus: #202020;
   --link-fg-focus: #EDEDED;
   --link-bg-active: #808080;
-  --link-fg-active: #000000;
+  --link-fg-active: #FFFFFF;
   --head-bg-focus: #202020;
   --head-fg-focus: #EDEDED;
 }
 
 [data-selected-theme="orange"] {
-  --site-bg: #FF7200;
+  --site-bg: #FCCB89;
   --site-fg: #000000;
   /* Things that go on site-bg but aren't essential; think dividing lines etc */
   --site-bg-muted: #FFA45B;
@@ -64,8 +66,8 @@
 
   --link-bg-focus: #F9C69D;
   --link-fg-focus: #000000;
-  --link-bg-active: #9F9F9F;
-  --link-fg-active: #000000;
+  --link-bg-active: #680000;
+  --link-fg-active: #F9C69D;
   --head-bg-focus: #F9C69D;
   --head-fg-focus: #000000;
 }
@@ -74,6 +76,7 @@ button[aria-pressed="true"] {
   background: var(--link-bg-active);
   color: var(--link-fg-active);
   box-shadow: 0 0 8px var(--link-bg-focus);
+  border: 2px dashed var(--link-fg-active) !important;
 }
 
 
@@ -114,23 +117,45 @@ h6 { font-size: 1.0em; background-color: var(--head-bg); color: var(--head-fg) }
 h2 a, h3 a, h4 a, h5 a, h6 a { padding: 0.1em 0.1em 0.1em 1em }
 
 /* Adds the #, and then shifts everything back over so it looks like magic. */
-h2 a:hover::before, h2 a:focus::before,
-h3 a:hover::before, h3 a:focus::before,
-h4 a:hover::before, h4 a:focus::before,
-h5 a:hover::before, h5 a:focus::before,
-h6 a:hover::before, h6 a:focus::before {
+div[id]:hover > h2 a::before, h2 a:focus::before,
+div[id]:hover > h3 a::before, h3 a:focus::before,
+div[id]:hover > h4 a::before, h4 a:focus::before,
+div[id]:hover > h5 a::before, h5 a:focus::before,
+div[id]:hover > h6 a::before, h6 a:focus::before {
   content: "# ";
-  margin-left: -0.93em;
+  margin-left: -0.9em;
 }
-
+/* We do the focus indication with the div instead so there's no gross wrapping
+ * on new lines */
 h2 a:hover, h2 a:focus,
 h3 a:hover, h3 a:focus,
 h4 a:hover, h4 a:focus,
 h5 a:hover, h5 a:focus,
 h6 a:hover, h6 a:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+/* hope and pray and beg that this never gets applied to the wrong thing, ig */
+/* future me needs to make vimwiki spit out divs for the headings that have a
+ * unique class or something */
+
+div[id] {
+  width: fit-content;
+  border: 1px solid transparent;
+  padding: 1.5vh 0.75vw;
+  /* <p>s and such will add margin that looks weird, so this undoes that without
+   * painfully complex selector rules (looks at old website)*/
+  margin-top: -0.5em;
+  margin-bottom: -0.5em; 
+  outline: none;
+  box-shadow: 5px 5px 0px transparent;
+}
+
+div[id]:focus-within,
+div[id]:hover {
   background-color: var(--head-bg-focus);
   color: var(--head-fg-focus);
-  outline: none;
   border: 1px solid var(--head-fg-focus);
 
   box-shadow: 5px 5px 0px var(--head-fg-focus);
@@ -232,6 +257,35 @@ hr {
 del {
   text-decoration: line-through;
   color: #777777;
+}
+#menu ul {
+  border-bottom: 1px dashed var(--site-bg-muted);
+  padding-bottom: 1em;
+  margin-top: -0.5em;
+}
+
+#menu li {
+  display: inline-block;
+}
+.skip {
+  position: absolute;
+  left: -1000px;
+  color: #000000 !important;
+  color: var(--site-fg) !important;
+  background: #FFFFFF !important;
+  background: var(--site-bg) !important;
+
+  font-size: min(4vw,1.1em);
+  border: 1px solid var(--site-fg) !important;
+  padding: min(4vh,2vw) max(2vw,4vh);
+  box-shadow: 0.8vw 0.8vw var(--site-fg) !important;
+}
+
+.skip:focus {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .toc li { list-style-type: none; }

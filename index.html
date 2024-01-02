@@ -2,15 +2,32 @@
 <html>
   <head>
     <link rel="Stylesheet" type="text/css" href="style.css" />
-    <title>Home</title>
+    <title>mimuki.net</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="robots" content="noindex">
+    <meta name="author" content="ilo Mimuki">   
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0" />
+
+    <meta name="googlebot"   content="noindex">
+    <meta name="bingbot"     content="noindex">
+    <meta name="baiduspider" content="noindex">
+    <meta name="yandex"      content="noindex">
   </head>
   <body>
-    <div class="content">
-      <h1 class="header justcenter">Home</h1>
-      <noscript><style> .javascript { display: none } </style></noscript>
+    <h1 class="header justcenter">mimuki.net</h1>
+    <noscript><style> .javascript { display: none } </style></noscript>
+    <header>
+      <nav id="menu">
+        <ul class="justcenter">
+          <li><a href="#content" class="skip">Skip navigation</a></li>
+          <li><a href="">Home</a></li>
+          <li><a href="projects">Projects</a></li>
+          <li><a href="thoughts">Thoughts</a></li>
+          <li><a href="tokipona">toki pona</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id=content>
       
 <div id="Who am I?"><h2 id="Who am I?" class="header"><a href="#Who am I?">Who am I?</a></h2></div>
 <p>
@@ -34,43 +51,30 @@ regretful computer toucher
 
 </ul>
 <p>
-My pronouns are he/him, except when they aren't. I'm in my mid 20s, and am reaching that point in life where it's too much effort to increment my age on websites every year.
+I go by whatever username(s) you know me as. My pronouns are he/him, except when they aren't. I'm in my mid 20s, and am reaching that point in life where it's too much effort to increment my age on websites every year.
 </p>
 
 <div id="Why a website?"><h2 id="Why a website?" class="header"><a href="#Why a website?">Why a website?</a></h2></div>
 <p>
-I have lots of things I feel like saying, and I make this site first for me, and second for anyone who will benefit from it. I design it based on my own whims, but ideally without totally sacrificing accessibility. 
+I have lots of things I feel like saying, and writing them down in a website makes it easier to share with my friends. Sometimes new friends will get to stumble upon this stuff too. That's fun. I also think websites are neat as self expression, a last hurrah of defiance against a homogenous, corporate internet.
 </p>
 
+<div id="Bonus webpages"><h2 id="Bonus webpages" class="header"><a href="#Bonus webpages">Bonus webpages</a></h2></div>
 <p>
-You might remember the old website- it was very pretty, but it was not making me happy. I was overwhelmed by its complexity, and I'm trying a more plaintexty approach, and taking things extra slow, even if that means things look a bit bland and boring for now.
+Things that aren't in my navbar, and need a place to exist until I fund a better one.
 </p>
-
-<div id="Additional shenanigans"><h2 id="Additional shenanigans" class="header"><a href="#Additional shenanigans">Additional shenanigans</a></h2></div>
 <ul>
 <li>
-<a href="projects/index.html">projects/</a> - bigger things I'm working on
-
-<li>
-<a href="thoughts/index.html">thoughts/</a> - things I think about, written down
-
-<li>
-<a href="todo/index.html">todo/</a> - To do lists of all sizes
-
-<li>
-<a href="tokipona/index.html">toki pona/</a> - lipu ale mi pi toki pona
-
-<li>
 <a href="now.html">now</a> - what I'm up to, at a glance
-
-<li>
-<a href="contact.html">contact</a> - commune with the webmaster from the comfort of your home
 
 <li>
 <a href="othersites.html">other sites</a> - a curated list of websites
 
 <li>
 <a href="testpage.html">test page</a> - CSS test zone
+
+<li>
+<a href="todo/index.html">todo/</a> - my personal to do lists
 
 </ul>
 <div id="Webrings"><h2 id="Webrings" class="header"><a href="#Webrings">Webrings</a></h2></div>
@@ -80,10 +84,11 @@ You might remember the old website- it was very pretty, but it was not making me
 
 </ul>
 
-    </div>
+    </main>
     <footer>
       <p>
-      last update: 2024-01-01 · no one you look up to is better than you are · <a href="https://ko-fi.com/therats">donations</a> · <a href="https://github.com/mimuki/mimuki.github.io">source</a>
+      last update: 2024-01-02 · no one you look up to is better than you are · <a href="https://ko-fi.com/therats">donations</a> · <a href="https://github.com/mimuki/mimuki.github.io">source</a> · <a href="contact">contact</a>
+
       <div class="theme-switcher javascript">
         <button data-theme="light"  aria-pressed="true">Light</button>
         <button data-theme="dark"   aria-pressed="false">Dark</button>
@@ -98,15 +103,17 @@ You might remember the old website- it was very pretty, but it was not making me
   const pressedButtonSelector = '[data-theme][aria-pressed="true"]'
   const defaultTheme = 'light';
 
+  /* on page load, if you have a preference*/
   const applyTheme = (theme) => {
+    /* the button for your theme */
     const target = document.querySelector(`[data-theme="${theme}"]`);
     document.documentElement.setAttribute("data-selected-theme", theme);
-    /* unpress everything */
+    /* unpress every theme */
     document.querySelector(pressedButtonSelector).setAttribute('aria-pressed', 'false');
-    /* press just ur button */
+    /* press just your theme */
     target.setAttribute('aria-pressed', 'true');
   };
-
+  /* when you press a button */
   const handleThemeSelection = (event) => {
     const target = event.target;
     const isPressed = target.getAttribute('aria-pressed');

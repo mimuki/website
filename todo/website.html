@@ -5,12 +5,29 @@
     <title>Website</title>
     <link rel="icon" type="image/x-icon" href="../images/favicon.png">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="robots" content="noindex">
+    <meta name="author" content="ilo Mimuki">   
+    <meta name="viewport"    content="width=device-width, initial-scale=1.0" />
+
+    <meta name="googlebot"   content="noindex">
+    <meta name="bingbot"     content="noindex">
+    <meta name="baiduspider" content="noindex">
+    <meta name="yandex"      content="noindex">
   </head>
   <body>
-    <div class="content">
-      <h1 class="header justcenter">Website</h1>
-      <noscript><style> .javascript { display: none } </style></noscript>
+    <h1 class="header justcenter">Website</h1>
+    <noscript><style> .javascript { display: none } </style></noscript>
+    <header>
+      <nav id="menu">
+        <ul class="justcenter">
+          <li><a href="#content" class="skip">Skip navigation</a></li>
+          <li><a href="../">Home</a></li>
+          <li><a href="../projects">Projects</a></li>
+          <li><a href="../thoughts">Thoughts</a></li>
+          <li><a href="../tokipona">toki pona</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id=content>
       
 <p>
 Yes, this website. The one you're looking at.
@@ -18,21 +35,14 @@ Yes, this website. The one you're looking at.
 <div id="To do"><h2 id="To do" class="header"><a href="#To do">To do</a></h2></div>
 <ul>
 <li class="done0">
-Make this website feel like home
+Add a pagelist thingy? where it's just one fuckoff big list of every single page on here?
 
-<ul>
-<li class="done0">
-Decide how and where I want to link to subpages
-
-<ul>
-<li class="done0">
+<li class="done4">
 Auto generate a navbar, or at least "go back to the previous subpage"?
 
 <li class="done0">
 Re-add (the cool parts of) the knitting page
 
-</ul>
-</ul>
 </ul>
 <hr />
 <ul>
@@ -40,22 +50,37 @@ Re-add (the cool parts of) the knitting page
 Accessibility:
 
 <ul>
+<li class="done0">
+Add the tok language tag to my toki pona pages
+
+<li class="done1">
+make the orange theme actually representative of how my screen looks
+
+<ul>
 <li class="done4">
-improve contrast
+find a "normal monitor user"
 
 <li class="done0">
-make to dos accessible
+have them help pick colours on their screen that looks like how my screen does
+
+</ul>
+<li class="done0">
+make to dos accessible (is this even possible?)
 
 <li class="done4">
 make the # in jumptos not read to screen reader
 
+<li class="done4">
+improve contrast in light/dark theme
+
 </ul>
 </ul>
 
-    </div>
+    </main>
     <footer>
       <p>
-      last update: 2024-01-01 · no one you look up to is better than you are · <a href="https://ko-fi.com/therats">donations</a> · <a href="https://github.com/mimuki/mimuki.github.io">source</a>
+      last update: 2024-01-02 · no one you look up to is better than you are · <a href="https://ko-fi.com/therats">donations</a> · <a href="https://github.com/mimuki/mimuki.github.io">source</a> · <a href="../contact">contact</a>
+
       <div class="theme-switcher javascript">
         <button data-theme="light"  aria-pressed="true">Light</button>
         <button data-theme="dark"   aria-pressed="false">Dark</button>
@@ -70,15 +95,17 @@ make the # in jumptos not read to screen reader
   const pressedButtonSelector = '[data-theme][aria-pressed="true"]'
   const defaultTheme = 'light';
 
+  /* on page load, if you have a preference*/
   const applyTheme = (theme) => {
+    /* the button for your theme */
     const target = document.querySelector(`[data-theme="${theme}"]`);
     document.documentElement.setAttribute("data-selected-theme", theme);
-    /* unpress everything */
+    /* unpress every theme */
     document.querySelector(pressedButtonSelector).setAttribute('aria-pressed', 'false');
-    /* press just ur button */
+    /* press just your theme */
     target.setAttribute('aria-pressed', 'true');
   };
-
+  /* when you press a button */
   const handleThemeSelection = (event) => {
     const target = event.target;
     const isPressed = target.getAttribute('aria-pressed');
