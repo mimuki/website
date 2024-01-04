@@ -1,13 +1,12 @@
 @font-face {
-  font-family: "Fairfax Pona HD", "linja lipamanka", sans-serif;
-  src: local("Fairfax Pona HD"), local("Fairfax Pona"), 
-       url('/fonts/fairfax.ttf')  format('truetype');
+  font-family: "Fairfax Pona HD";
+  src: url(https://mimuki.net/fonts/fairfax.ttf);
 }
 
 p, p a, button, h1, h2, h3, h4, h5, h6, #menu ul li a {
   max-width: 40ch;
   line-height: 120%;
-  font-family: "Fairfax Pona HD";
+  font-family: "A";
   font-style: normal;
   font-size: 3vw;
   font-weight: initial;
