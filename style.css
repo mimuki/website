@@ -92,7 +92,7 @@ body {
 /* Body has less padding on mobile/small screens */
 @media screen and (max-width: 1000px) {
   body { 
-    margin: 0 5%;
+    margin: auto 5%;
     width: 90%;
     line-height: 120%;
   }
