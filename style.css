@@ -49,14 +49,14 @@
 }
 
 [data-selected-theme="orange"] {
-  --site-bg: #FCCB89;
+  --site-bg: #f9b967; 
   --site-fg: #000000;
   /* Things that go on site-bg but aren't essential; think dividing lines etc */
-  --site-bg-muted: #FFA45B;
+  --site-bg-muted: #FF8829;
   /* Things that need to be legible but aren't important; disabled text etc */
   --site-fg-muted: #333333;
-  --link-bg: #680000;
-  --link-fg: #F9C69D;
+  --link-bg: #FF8840;
+  --link-fg: #000000;
   --head-bg: transparent;
   --head-fg: #000000;
 
@@ -117,9 +117,9 @@ h1 {
 }
 
 h2 { font-size: 1.8em }
-h3 { font-size: 1.6em }
-h4 { font-size: 1.4em }
-h5 { font-size: 1.2em }
+h3 { font-size: 1.2em }
+h4 { font-size: 1.1em }
+h5 { font-size: 1.1em }
 h6 { font-size: 1.0em }
 
 h2 a, h3 a, h4 a, h5 a, h6 a { padding: 0.1em }
@@ -136,11 +136,7 @@ h6 a:hover, h6 a:focus {
   box-shadow: none;
 }
 
-/* hope and pray and beg that this never gets applied to the wrong thing, ig */
-/* future me needs to make vimwiki spit out divs for the headings that have a
- * unique class or something */
-
-div[id] {
+.headingBox {
   width: fit-content;
   border: 1px solid transparent;
   padding: 1.5vh 0.75vw;
@@ -152,18 +148,19 @@ div[id] {
   box-shadow: 5px 5px 0px transparent;
 }
 
-div[id]:focus-within,
-div[id]:hover {
+.headingBox:focus-within,
+.headingBox:hover {
   background-color: var(--head-bg-focus);
   color: var(--head-fg-focus);
   border: 1px solid var(--head-fg-focus);
 
   box-shadow: 5px 5px 0px var(--head-fg-focus);
 }
-
+/* a heading followed by another heading needs some spacing */
+.headingBox + .headingBox { margin-top: 0.5em }
 p, pre, blockquote, table, ul, ol, dl {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
 }
 
 ul ul, ul ol, ol ol, ol ul {
@@ -174,14 +171,16 @@ ul ul, ul ol, ol ol, ol ul {
 li { margin: 0.3em auto; }
 
 ul {
-  margin-left: 0.5em;
   padding-left: 0;
 }
 
 dt { font-weight: bold; }
 
 /* Add some visual seperation between footer and not-footer */
-footer { border-top: 1px solid var(--site-bg-muted) }
+footer { 
+  border-top: 1px solid var(--site-bg-muted);
+  margin-top: 1em;
+}
 footer p { color: var(--site-fg-muted) }
 
 img { 
@@ -205,8 +204,7 @@ pre {
   word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
-p > a,
-li > a,
+a:not(.header),
 button {
   background-color: var(--link-bg);
   color: var(--link-fg);
@@ -220,10 +218,7 @@ button {
   outline: none;
 }
 
-p > a:hover,
-p > a:focus,
-li > a:hover,
-li > a:focus,
+a:not(.header):hover, a:not(.header):focus,
 button:hover, button:focus {
   background-color: var(--link-bg-focus);
   color: var(--link-fg-focus);
@@ -231,6 +226,15 @@ button:hover, button:focus {
   /* shadow: simple blur */
   box-shadow: 4px 4px 0px var(--link-fg-focus);
 }
+
+.textlink { 
+  display: list-item;
+  width: fit-content;
+  margin: 0.3em 0;
+}
+/* <a>s aren't inside a <p>, so this only adds margin right after a heading */
+.headingBox + a { margin-top: 1em } 
+a + .headingBox { margin-top: 0.3em } 
 
 blockquote {
   color: var(--site-fg-muted);
@@ -314,7 +318,7 @@ del {
   padding: 2px;
 }
 
-.header a {
+a.header {
   text-decoration: none;
   color: inherit;
 }
