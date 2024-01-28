@@ -1,4 +1,6 @@
 fonts/style-override.css
+# neocities is a little silly
+.git/
 images/style-override.css
 projects/style-override.css
 thoughts/style-override.css

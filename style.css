@@ -113,7 +113,9 @@ h2, h3, h4, h5, h6 {
 h1 { 
   font-family: lora, 'URW Bookman', 'URW Bookman L',  Georgia, Superclarendon, 'Bookman Old Style', serif;
   font-weight: 550;
+  line-height: 100%;
   font-style: italic;
+  margin: 0.5em 0;
 }
 
 h2 { font-size: 1.8em }
@@ -177,10 +179,7 @@ ul {
 dt { font-weight: bold; }
 
 /* Add some visual seperation between footer and not-footer */
-footer { 
-  border-top: 1px solid var(--site-bg-muted);
-  margin-top: 1em;
-}
+footer { margin-top: 1em }
 footer p { color: var(--site-fg-muted) }
 
 img { 
@@ -258,14 +257,17 @@ hr {
   width: 100%;
 }
 
+hr.muted { border-top: 1px dashed var(--site-bg-muted) }
+
+
 del {
   text-decoration: line-through;
   color: #777777;
 }
-#menu ul {
-  border-bottom: 1px dashed var(--site-bg-muted);
-  padding-bottom: 1em;
+
+#menu ul, #menu menu { 
   margin-top: -0.5em;
+  marign-left: 0;
 }
 
 #menu li {
@@ -291,6 +293,8 @@ del {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+#content { margin-top: 1em }
 
 .toc li { list-style-type: none; }
 
