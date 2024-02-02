@@ -48,6 +48,59 @@
   --head-fg-focus: #EDEDED;
 }
 
+/* Auto theme, preference for light mode */
+@media (prefers-color-scheme: light) {
+  [data-selected-theme="auto"] {
+  --site-bg: #FFFFFF;
+  --site-fg: #000000;
+  /* Things that go on site-bg but aren't essential; think dividing lines etc */
+  --site-bg-muted: #CCCCCC;
+  /* Things that need to be legible but aren't important; disabled text etc */
+  --site-fg-muted: #333333;
+  --link-bg: #EDEDED;
+  --link-fg: #000000;
+  --head-bg: transparent;
+  --head-fg: #000000;
+
+  /* Code blocks and similar- need colours similar to site-bg, but not quite */
+  --block-bg: #EDEDED;
+  --block-fg: #000000;
+
+  --link-bg-focus: #FFFFFF;
+  --link-fg-focus: #000000;
+  --link-bg-active: #CCCCCC;
+  --link-fg-active: #000000;
+  --head-bg-focus: #FFFFFF;
+  --head-fg-focus: #000000;
+  }
+}
+
+/* Auto theme, preference for dark mode */
+@media (prefers-color-scheme: dark) {
+  [data-selected-theme="auto"] {
+  --site-bg: #000000;
+  --site-fg: #FFFFFF;
+  /* Things that go on site-bg but aren't essential; think dividing lines etc */
+  --site-bg-muted: #333333;
+  /* Things that need to be legible but aren't important; disabled text etc */
+  --site-fg-muted: #CCCCCC;
+  --link-bg: #404040;
+  --link-fg: #EDEDED;
+  --head-bg: transparent;
+  --head-fg: #FFFFFF;
+
+  /* Code blocks and similar- need colours similar to site-bg, but not quite */
+  --block-bg: #202020;
+  --block-fg: #F5F5F5;
+
+  --link-bg-focus: #202020;
+  --link-fg-focus: #EDEDED;
+  --link-bg-active: #808080;
+  --link-fg-active: #FFFFFF;
+  --head-bg-focus: #202020;
+  --head-fg-focus: #EDEDED;
+}
+}
 [data-selected-theme="orange"] {
   --site-bg: #f9b967; 
   --site-fg: #000000;

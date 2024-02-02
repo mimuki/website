@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-selected-theme="auto">
   <head>
     <link rel="Stylesheet" type="text/css" href="style.css" />
     <link rel="Stylesheet" type="text/css" href="style-override.css" />
@@ -46,14 +46,15 @@
     <footer>
       <hr>
       <p>
-      no one you look up to is better than you are · <a href="https://codeberg.org/snonux/gemtexter">Gemtexter 2.1.0-release</a> · <a href="https://ko-fi.com/therats">donations</a> · <a href="https://github.com/mimuki/mimuki.github.io">source</a> · <a href="/contact">contact</a>
+        no one you look up to is better than you are · <a href="https://codeberg.org/snonux/gemtexter">Gemtexter 2.1.0-release</a> · <a href="https://ko-fi.com/therats">donations</a> · <a href="https://github.com/mimuki/mimuki.github.io">source</a> · <a href="/contact">contact</a>
 
         <div class="theme-switcher javascript">
           Themes (Javascript required):
-          <button data-theme="light"  aria-pressed="true">Light</button>
-          <button data-theme="dark"   aria-pressed="false">Dark</button>
-          <button data-theme="orange" aria-pressed="false">Orange</button>
-          <button data-theme="terminal"   aria-pressed="false">Terminal</button>
+          <button data-theme="auto"     aria-pressed="true">Auto</button>
+          <button data-theme="light"    aria-pressed="false">Light</button>
+          <button data-theme="dark"     aria-pressed="false">Dark</button>
+          <button data-theme="orange"   aria-pressed="false">Orange</button>
+          <button data-theme="terminal" aria-pressed="false">Terminal</button>
         </div>
       </p>
     </footer>
@@ -62,7 +63,8 @@
 
 <script>
   const pressedButtonSelector = '[data-theme][aria-pressed="true"]'
-  const defaultTheme = 'light';
+  const defaultTheme = 'auto'; /* tries to get your prefers-colour-scheme
+                                  preference, falls back to light */
 
   /* on page load, if you have a preference*/
   const applyTheme = (theme) => {

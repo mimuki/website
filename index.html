@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-selected-theme="auto">
   <head>
     <link rel="Stylesheet" type="text/css" href="style.css" />
     <link rel="Stylesheet" type="text/css" href="style-override.css" />
@@ -47,7 +47,11 @@
 <div class='headingBox' id='Why-a-website'><h2><a href='#Why-a-website' class='header'>Why a website?</a></h2></div>
 <p>I have lots of things I feel like saying, and writing them down in a website makes it easier to share with my friends. Sometimes new friends will get to stumble upon this stuff too. That&#39;s fun. I also think websites are neat as self expression, a last hurrah of defiance against a homogenous, corporate internet.</p>
 <div class='headingBox' id='Recent-changes'><h2><a href='#Recent-changes' class='header'>Recent changes</a></h2></div>
-<p>Last update: 2024-01-29</p>
+<p>Last update: 2024-02-03</p>
+<div class='headingBox' id='Feburary'><h3><a href='#Feburary' class='header'>Feburary</a></h3></div>
+<ul>
+<li>Added "auto" theme, which respects your browser preference for light or dark mode</li>
+</ul>
 <div class='headingBox' id='January'><h3><a href='#January' class='header'>January</a></h3></div>
 <ul>
 <li>added a new theme! It takes heavy inspiration from my lynx config, with some modern conviniences like images</li>
@@ -74,14 +78,15 @@
     <footer>
       <hr>
       <p>
-      no one you look up to is better than you are · <a href="https://codeberg.org/snonux/gemtexter">Gemtexter 2.1.0-release</a> · <a href="https://ko-fi.com/therats">donations</a> · <a href="https://github.com/mimuki/mimuki.github.io">source</a> · <a href="/contact">contact</a>
+        no one you look up to is better than you are · <a href="https://codeberg.org/snonux/gemtexter">Gemtexter 2.1.0-release</a> · <a href="https://ko-fi.com/therats">donations</a> · <a href="https://github.com/mimuki/mimuki.github.io">source</a> · <a href="/contact">contact</a>
 
         <div class="theme-switcher javascript">
           Themes (Javascript required):
-          <button data-theme="light"  aria-pressed="true">Light</button>
-          <button data-theme="dark"   aria-pressed="false">Dark</button>
-          <button data-theme="orange" aria-pressed="false">Orange</button>
-          <button data-theme="terminal"   aria-pressed="false">Terminal</button>
+          <button data-theme="auto"     aria-pressed="true">Auto</button>
+          <button data-theme="light"    aria-pressed="false">Light</button>
+          <button data-theme="dark"     aria-pressed="false">Dark</button>
+          <button data-theme="orange"   aria-pressed="false">Orange</button>
+          <button data-theme="terminal" aria-pressed="false">Terminal</button>
         </div>
       </p>
     </footer>
@@ -90,7 +95,8 @@
 
 <script>
   const pressedButtonSelector = '[data-theme][aria-pressed="true"]'
-  const defaultTheme = 'light';
+  const defaultTheme = 'auto'; /* tries to get your prefers-colour-scheme
+                                  preference, falls back to light */
 
   /* on page load, if you have a preference*/
   const applyTheme = (theme) => {
